@@ -1,7 +1,7 @@
 {
-  "name": "@samhwang/ts-starter-template",
+  "name": "ts-app",
   "version": "1.0.0",
-  "description": "TypeScript Starter Template",
+  "description": "TypeScript App Starter Template",
   "engines": {
     "node": "^24.0.0",
     "pnpm": "^10.0.0"

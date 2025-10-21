@@ -1,7 +1,7 @@
 {
-  "name": "@samhwang/vite-react-starter-template",
+  "name": "vite-react-spa",
   "version": "1.0.0",
-  "description": "Vite + React Starter Template",
+  "description": "Vite + React SPA Starter Template",
   "msw": {
     "workerDirectory": [
       "public"
