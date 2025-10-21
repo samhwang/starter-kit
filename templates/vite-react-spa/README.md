@@ -5,11 +5,9 @@ to be very similar to Create-React-App, but faster and with batteries included!
 
 ## Using this template
 
-There are 3 ways that you can adopt this template.
-
-- Click the `Use this template` button on this repo, or click on [this link](https://github.com/samhwang/vite-starter-template/generate).
-- Clone this repo, delete the .git folder and re-init the Git tree.
-- Use `degit`: `npx degit samhwang/vite-starter-template project-name`
+```shell
+npx degit samhwang/starter-kit/templates/vite-react-spa
+```
 
 ## Batteries included
 
