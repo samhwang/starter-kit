@@ -8,19 +8,6 @@
   },
   "packageManager": "pnpm@10.19.0",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "prepare": "husky",
     "start": "vite-node bin/index.ts",
