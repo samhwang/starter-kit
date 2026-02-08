@@ -6,7 +6,7 @@
     "node": "^24.0.0",
     "pnpm": "^10.0.0"
   },
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.29.1",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -36,16 +36,16 @@
     "ci": "biome ci ."
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.2",
-    "@types/node": "^24.9.2",
-    "@vitest/coverage-v8": "^4.0.4",
+    "@biomejs/biome": "^2.3.14",
+    "@types/node": "^24.10.12",
+    "@vitest/coverage-v8": "^4.0.18",
     "husky": "^9.1.7",
     "lint-prepush": "^3.0.2",
-    "lint-staged": "^16.2.6",
-    "tsdown": "^0.15.11",
+    "lint-staged": "^16.2.7",
+    "tsdown": "^0.20.3",
     "typescript": "^5.9.3",
-    "vite-node": "^3.2.4",
-    "vitest": "^4.0.4"
+    "vite-node": "^5.3.0",
+    "vitest": "^4.0.18"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
