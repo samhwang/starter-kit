@@ -20,7 +20,7 @@ npx degit samhwang/starter-kit/templates/vite-react-spa
 ### Dev tools:
 
 - [pnpm](https://pnpm.io) - Fast, disk space efficient package manager.
-- [Biome](https://biomejs.dev/) for code linting and formatting.
+- [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) for code linting, and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) for code formatting
 - [Vite](https://vitejs.dev/) - The blazing fast frontend build tool.
 - [Vitest](https://vitest.dev/) for running unit tests with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/),
   using [msw](https://mswjs.io/) to fake a service worker request to intercept API calls during testing.
