@@ -7,6 +7,6 @@ consoleSpy.mockImplementation(() => {});
 describe('say hello', () => {
   it('should say hello', () => {
     sayHello();
-    expect(consoleSpy).toBeCalled();
+    expect(consoleSpy).toHaveBeenCalled();
   });
 });
