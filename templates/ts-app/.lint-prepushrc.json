@@ -2,7 +2,7 @@
   "base": "master",
   "verbose": true,
   "tasks": {
-    "*": ["biome ci --no-errors-on-unmatched"],
-    "*.[js,mjs,ts,mts]": ["tsc", "vitest run"]
+    "*": ["oxlint --no-error-on-unmatched-pattern", "oxfmt --check --no-error-on-unmatched-pattern"],
+    "*.[js,jsx,ts,tsx]": ["tsc", "vitest run"]
   }
 }
