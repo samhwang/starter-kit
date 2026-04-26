@@ -24,7 +24,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "start": "vite-node bin/index.ts",
+    "start": "tsx bin/index.ts",
     "build": "tsdown",
     "prepublishOnly": "pnpm run build",
     "typecheck": "tsc",
