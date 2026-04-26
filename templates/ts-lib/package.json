@@ -6,15 +6,21 @@
     "dist"
   ],
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
-    }
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "homepage": "https://github.com/samhwang/PLACEHOLDER#readme",
+  "bugs": "https://github.com/samhwang/PLACEHOLDER/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samhwang/PLACEHOLDER.git"
   },
   "scripts": {
     "prepare": "husky",
@@ -39,18 +45,13 @@
     "oxfmt": "^0.46.0",
     "oxlint": "^1.61.0",
     "tsdown": "^0.21.10",
+    "tsx": "^4.21.0",
     "typescript": "^6.0.3",
-    "vite-node": "^6.0.0",
     "vitest": "^4.1.5"
   },
   "engines": {
     "node": "^24.0.0",
     "pnpm": "^10.0.0"
   },
-  "packageManager": "pnpm@10.33.2",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
-  }
+  "packageManager": "pnpm@10.33.2"
 }
