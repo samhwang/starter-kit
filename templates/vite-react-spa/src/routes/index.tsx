@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-function IndexPage() {
+export function IndexPage() {
   return <h1>Hi.</h1>;
 }
 
