@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
+
 import { sayHello } from './index';
 
 const consoleSpy = vi.spyOn(console, 'log');

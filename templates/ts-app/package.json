@@ -2,11 +2,6 @@
   "name": "ts-app",
   "version": "1.0.0",
   "description": "TypeScript App Starter Template",
-  "engines": {
-    "node": "^24.0.0",
-    "pnpm": "^10.0.0"
-  },
-  "packageManager": "pnpm@10.33.2",
   "type": "module",
   "scripts": {
     "prepare": "husky",
@@ -35,6 +30,11 @@
     "vite-node": "^6.0.0",
     "vitest": "^4.1.5"
   },
+  "engines": {
+    "node": "^24.0.0",
+    "pnpm": "^10.0.0"
+  },
+  "packageManager": "pnpm@10.33.2",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild"

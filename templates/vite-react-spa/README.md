@@ -23,7 +23,7 @@ npx degit samhwang/starter-kit/templates/vite-react-spa
 - [Biome](https://biomejs.dev/) for code linting and formatting.
 - [Vite](https://vitejs.dev/) - The blazing fast frontend build tool.
 - [Vitest](https://vitest.dev/) for running unit tests with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/),
-using [msw](https://mswjs.io/) to fake a service worker request to intercept API calls during testing.
+  using [msw](https://mswjs.io/) to fake a service worker request to intercept API calls during testing.
 
 ## Available Scripts
 

@@ -2,17 +2,7 @@
   "name": "vite-react-spa",
   "version": "1.0.0",
   "description": "Vite + React SPA Starter Template",
-  "msw": {
-    "workerDirectory": [
-      "public"
-    ]
-  },
   "type": "module",
-  "engines": {
-    "node": "^24.0.0",
-    "pnpm": "^10.0.0"
-  },
-  "packageManager": "pnpm@10.33.2",
   "scripts": {
     "prepare": "pnpm run githooks:init",
     "githooks:init": "husky",
@@ -69,12 +59,22 @@
     "vitest": "^4.1.5",
     "vitest-preview": "^0.0.3"
   },
+  "engines": {
+    "node": "^24.0.0",
+    "pnpm": "^10.0.0"
+  },
+  "packageManager": "pnpm@10.33.2",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
       "msw",
       "oxlint",
       "oxfmt"
+    ]
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
     ]
   }
 }
