@@ -1,8 +1,5 @@
 # Getting Started with Vite - React starter template
 
-This project was bootstrapped with [Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project), and was created
-to be very similar to Create-React-App, but faster and with batteries included!
-
 ## Using this template
 
 ```shell
@@ -16,6 +13,7 @@ npx degit samhwang/starter-kit/templates/vite-react-spa
 - [React](https://reactjs.org) and [TypeScript](https://www.typescriptlang.org/) - The library for web and native user interfaces.
 - [Tanstack Router](https://tanstack.com/router/) - To handle app client side routing
 - [Tanstack Form](https://tanstack.com/form/) - To handle form creation and validation.
+- [Tanstack Query](https://tanstack.com/query/) - To handle external server query state
 
 ### Dev tools:
 
