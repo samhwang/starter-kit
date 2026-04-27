@@ -3,7 +3,7 @@
 ## Using this template
 
 ```shell
-npx degit samhwang/starter-kit/templates/vite-react-spa
+npx degit samhwang/starter-kit/templates/vite-spa
 ```
 
 ## Batteries included
@@ -12,7 +12,7 @@ npx degit samhwang/starter-kit/templates/vite-react-spa
 
 - [React](https://reactjs.org) and [TypeScript](https://www.typescriptlang.org/) - The library for web and native user interfaces.
 - [Tanstack Router](https://tanstack.com/router/) - To handle app client side routing
-- [Tanstack Form](https://tanstack.com/form/) - To handle form creation and validation.
+- [Tanstack Form](https://tanstack.com/form/) - To handle form creation and validation
 - [Tanstack Query](https://tanstack.com/query/) - To handle external server query state
 
 ### Dev tools:
