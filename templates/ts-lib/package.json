@@ -2,9 +2,11 @@
   "name": "ts-lib",
   "version": "1.0.0",
   "description": "TypeScript Library Starter Template",
-  "files": [
-    "dist"
-  ],
+  "engines": {
+    "node": "^24.0.0",
+    "pnpm": "^11.0.0"
+  },
+  "packageManager": "pnpm@11.2.2",
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -37,21 +39,16 @@
     "ci": "oxlint . && oxfmt --check ."
   },
   "devDependencies": {
-    "@types/node": "^25.6.0",
-    "@vitest/coverage-v8": "^4.1.5",
+    "@types/node": "^25.9.1",
+    "@vitest/coverage-v8": "^4.1.7",
     "husky": "^9.1.7",
     "lint-prepush": "^3.0.3",
-    "lint-staged": "^16.4.0",
-    "oxfmt": "^0.46.0",
-    "oxlint": "^1.61.0",
-    "tsdown": "^0.21.10",
-    "tsx": "^4.21.0",
+    "lint-staged": "^17.0.5",
+    "oxfmt": "^0.51.0",
+    "oxlint": "^1.66.0",
+    "tsdown": "^0.22.0",
+    "tsx": "^4.22.3",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.5"
-  },
-  "engines": {
-    "node": "^24.0.0",
-    "pnpm": "^10.0.0"
-  },
-  "packageManager": "pnpm@10.33.2"
+    "vitest": "^4.1.7"
+  }
 }

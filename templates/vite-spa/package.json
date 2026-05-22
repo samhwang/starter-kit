@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Vite + React SPA Starter Template",
   "type": "module",
+  "engines": {
+    "node": "^24.0.0",
+    "pnpm": "^11.0.0"
+  },
+  "packageManager": "pnpm@11.2.2",
   "scripts": {
     "prepare": "pnpm run githooks:init",
     "githooks:init": "husky",
@@ -22,61 +27,42 @@
     "ci": "oxlint . && oxfmt --check ."
   },
   "dependencies": {
-    "@tanstack/react-devtools": "^0.10.2",
-    "@tanstack/react-form": "^1.29.1",
-    "@tanstack/react-form-devtools": "^0.2.22",
-    "@tanstack/react-query": "^5.100.5",
-    "@tanstack/react-query-devtools": "^5.100.5",
-    "@tanstack/react-router": "^1.168.24",
-    "@tanstack/react-router-devtools": "^1.166.13",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
+    "@tanstack/react-form": "^1.32.0",
+    "@tanstack/react-query": "^5.100.11",
+    "@tanstack/react-query-devtools": "^5.100.11",
+    "@tanstack/react-router": "^1.170.7",
+    "@tanstack/react-router-devtools": "^1.167.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "react-error-boundary": "^6.1.1",
-    "zod": "^4.3.6"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@tanstack/router-cli": "^1.166.36",
-    "@tanstack/router-vite-plugin": "^1.166.42",
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@tanstack/router-cli": "^1.167.9",
+    "@tanstack/router-vite-plugin": "^1.167.10",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "@types/node": "^25.6.0",
-    "@types/react": "^19.2.14",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "@vitest/coverage-v8": "^4.1.5",
-    "@vitest/ui": "^4.1.5",
+    "@vitejs/plugin-react": "^6.0.2",
+    "@vitest/coverage-v8": "^4.1.7",
+    "@vitest/ui": "^4.1.7",
     "babel-plugin-react-compiler": "^1.0.0",
     "husky": "^9.1.7",
-    "jsdom": "^29.0.2",
+    "jsdom": "^29.1.1",
     "lint-prepush": "^3.0.3",
-    "lint-staged": "^16.4.0",
-    "msw": "^2.13.6",
-    "oxfmt": "^0.46.0",
-    "oxlint": "^1.61.0",
-    "tsx": "^4.21.0",
+    "lint-staged": "^17.0.5",
+    "msw": "^2.14.6",
+    "oxfmt": "^0.51.0",
+    "oxlint": "^1.66.0",
+    "tsx": "^4.22.3",
     "typescript": "^6.0.3",
-    "vite": "^8.0.10",
-    "vitest": "^4.1.5",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7",
     "vitest-preview": "^0.0.3"
-  },
-  "engines": {
-    "node": "^24.0.0",
-    "pnpm": "^10.0.0"
-  },
-  "packageManager": "pnpm@10.33.2",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "msw",
-      "oxlint",
-      "oxfmt"
-    ]
-  },
-  "msw": {
-    "workerDirectory": [
-      "public"
-    ]
   }
 }
