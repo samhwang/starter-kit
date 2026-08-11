@@ -26,7 +26,7 @@
     "prisma:format": "dotenvx run -- prisma format",
     "prisma:generate": "dotenvx run -- prisma generate",
     "prisma:studio": "dotenvx run -- prisma studio",
-    "auth:generate": "better-auth generate --config ./src/auth/server.ts",
+    "auth:generate": "dotenvx run -- better-auth generate --config ./src/auth/server.ts",
     "auth:secret": "better-auth secret"
   },
   "dependencies": {
