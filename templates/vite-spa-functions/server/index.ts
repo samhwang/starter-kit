@@ -4,8 +4,7 @@ import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import { requestId } from 'hono/request-id';
 
-import { createAuth } from './auth/server';
-import { getDbClient } from './db';
+import { auth } from './auth/server';
 import { appRouter } from './orpc/router';
 
 const app = new Hono<{ Bindings: Cloudflare.Env }>().basePath('/api');
@@ -31,8 +30,6 @@ app.use('/rpc/**', async (c, next) => {
 });
 
 app.on(['POST', 'GET'], '/auth/**', (c) => {
-  const db = getDbClient();
-  const auth = createAuth(db);
   return auth.handler(c.req.raw);
 });
 
