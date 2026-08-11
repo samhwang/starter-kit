@@ -1,0 +1,11 @@
+# Cloudflare Workers configuration
+# Copy this to wrangler.toml and update to fit your project.
+# Requires DEPLOYMENT_ENV=cloudflare at build time (see .env.sample).
+
+name = "tanstack-start"
+main = "dist/server/index.mjs"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+DEPLOYMENT_ENV = "cloudflare"
