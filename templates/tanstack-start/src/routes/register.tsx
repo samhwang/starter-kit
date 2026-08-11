@@ -52,10 +52,9 @@ function RegisterPage() {
   });
 
   return (
-    <main className="mx-auto max-w-sm px-4 py-16">
-      <h1 className="mb-6 text-2xl font-bold text-stone-800">Create an account</h1>
+    <main>
+      <h1>Create an account</h1>
       <form
-        className="space-y-4"
         onSubmit={(e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -69,13 +68,9 @@ function RegisterPage() {
           {(field) => <field.AuthField label="Confirm password" type="password" placeholder="Repeat password" />}
         </form.AppField>
 
-        {error && <p className="text-sm text-red-700">{error}</p>}
+        {error && <p>{error}</p>}
 
-        <button
-          type="submit"
-          disabled={form.state.isSubmitting}
-          className="w-full rounded-lg bg-stone-800 py-2 text-white hover:bg-stone-700 disabled:cursor-wait disabled:opacity-70"
-        >
+        <button type="submit" disabled={form.state.isSubmitting}>
           Create account
         </button>
       </form>

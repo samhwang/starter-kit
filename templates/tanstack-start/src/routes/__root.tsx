@@ -7,8 +7,6 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 
 import { getSiteName } from '../config/server/getSiteName';
 
-import appCss from '../styles.css?url';
-
 const THIRTY_SECONDS = 30 * 1000;
 
 const queryClient = new QueryClient({
@@ -34,10 +32,7 @@ export const Route = createRootRoute({
       { title: match.context.clientEnv.SITE_NAME },
       { name: 'description', content: match.context.clientEnv.SITE_NAME },
     ],
-    links: [
-      { rel: 'stylesheet', href: appCss },
-      { rel: 'icon', href: '/favicon.svg' },
-    ],
+    links: [{ rel: 'icon', href: '/favicon.svg' }],
   }),
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -45,13 +40,11 @@ export const Route = createRootRoute({
 
 function NotFoundComponent() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-stone-800">404</h1>
-        <p className="mt-2 text-stone-600">Page not found.</p>
-        <Link to="/" className="mt-4 inline-block text-amber-700 underline hover:text-amber-800">
-          Go home
-        </Link>
+    <main>
+      <div>
+        <h1>404</h1>
+        <p>Page not found.</p>
+        <Link to="/">Go home</Link>
       </div>
     </main>
   );
@@ -64,7 +57,7 @@ function RootComponent() {
         <head>
           <HeadContent />
         </head>
-        <body className="relative font-sans antialiased">
+        <body>
           <Outlet />
           <TanStackDevtools
             plugins={[

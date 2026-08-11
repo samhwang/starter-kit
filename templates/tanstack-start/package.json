@@ -2,7 +2,7 @@
   "name": "tanstack-start",
   "version": "1.0.0",
   "private": true,
-  "description": "TanStack Start + React + Better Auth + Prisma + Tailwind Starter Template",
+  "description": "TanStack Start + React + Better Auth + Prisma Starter Template",
   "type": "module",
   "scripts": {
     "dev": "vite dev --port 3000",
@@ -34,7 +34,6 @@
     "@dotenvx/dotenvx": "^1.63.0",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.7.0",
-    "@tailwindcss/vite": "^4.2.4",
     "@tanstack/react-devtools": "^0.10.2",
     "@tanstack/react-form": "^1.29.1",
     "@tanstack/react-form-devtools": "^0.2.22",
@@ -50,7 +49,6 @@
     "prisma": "^7.8.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "tailwindcss": "^4.2.4",
     "zod": "^4.3.6"
   },
   "devDependencies": {

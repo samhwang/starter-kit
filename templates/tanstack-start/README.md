@@ -17,7 +17,6 @@ npx degit samhwang/starter-kit/templates/tanstack-start
 - [TanStack Query](https://tanstack.com/query/) - To manage external server query state.
 - [Better Auth](https://www.better-auth.com/) - Auth with email/password, admin plugin, database rate limiting.
 - [Prisma](https://prisma.io) ORM + PostgreSQL.
-- [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first styling.
 - [Nitro](https://nitro.unjs.io/) - Deployment-agnostic server output (node/vercel/netlify/cloudflare).
 
 ### Dev tools:
@@ -60,7 +59,7 @@ npx degit samhwang/starter-kit/templates/tanstack-start
    pnpm run dev
    ```
 
-   Open [http://localhost:3000](http://localhost:3000). The first user to sign up becomes admin.
+   Open [http://localhost:3000](http://localhost:3000).
 
 ## Available Scripts
 

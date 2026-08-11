@@ -1,6 +1,5 @@
 import { cloudflare } from '@cloudflare/vite-plugin';
 import netlify from '@netlify/vite-plugin-tanstack-start';
-import tailwindcss from '@tailwindcss/vite';
 import { devtools } from '@tanstack/devtools-vite';
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import viteReact from '@vitejs/plugin-react';
@@ -35,5 +34,5 @@ function getDeploymentPlugins(): PluginOption[] {
 }
 
 export default defineConfig({
-  plugins: [devtools(), tailwindcss(), tanstackStart(), ...getDeploymentPlugins(), viteReact()],
+  plugins: [devtools(), tanstackStart(), ...getDeploymentPlugins(), viteReact()],
 });

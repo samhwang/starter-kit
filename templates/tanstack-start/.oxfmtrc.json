@@ -7,9 +7,5 @@
   "singleQuote": true,
   "jsxSingleQuote": false,
   "arrowParens": "always",
-  "sortImports": true,
-  "sortTailwindcss": {
-    "stylesheet": "./src/styles.css",
-    "functions": ["clsx", "cn"]
-  }
+  "sortImports": true
 }

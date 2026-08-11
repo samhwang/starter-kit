@@ -31,11 +31,11 @@ function DashboardPage() {
   const user = session?.user;
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16">
-      <h1 className="text-2xl font-bold text-stone-800">Dashboard</h1>
-      {user && <p className="mt-2 text-stone-600">Signed in as {user.email}</p>}
+    <main>
+      <h1>Dashboard</h1>
+      {user && <p>Signed in as {user.email}</p>}
 
-      <button type="button" className="mt-6 rounded-lg bg-stone-800 px-4 py-2 text-white hover:bg-stone-700" onClick={() => void authClient.signOut()}>
+      <button type="button" onClick={() => void authClient.signOut()}>
         Sign out
       </button>
     </main>
