@@ -3,13 +3,13 @@ import { PrismaPg } from '@prisma/adapter-pg';
 import { serverEnv } from '../../config/lib/env.server';
 import { PrismaClient } from '../generated/prisma/client';
 
-let prisma: PrismaClient | undefined;
+let db: PrismaClient | undefined;
 
 export function getDbClient() {
-  if (!prisma) {
+  if (!db) {
     const adapter = new PrismaPg({ connectionString: serverEnv.DATABASE_URL });
-    prisma = new PrismaClient({ adapter });
+    db = new PrismaClient({ adapter });
   }
 
-  return prisma;
+  return db;
 }

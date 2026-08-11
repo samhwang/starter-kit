@@ -12,8 +12,6 @@ const getSession = createServerFn().handler(async () => {
   return {
     id: session.user.id,
     email: session.user.email,
-    role: session.user.role as string,
-    isActive: session.user.isActive as boolean,
   };
 });
 

@@ -1,3 +1,4 @@
+
 generator client {
   provider = "prisma-client"
   output   = "../src/database/generated/prisma"
@@ -13,8 +14,7 @@ datasource db {
 
 enum UserRole {
   admin
-  editor
-  member
+  user
 }
 
 // ============================================================
@@ -28,8 +28,7 @@ model User {
   name          String?
   emailVerified Boolean   @default(false) @map("email_verified")
   image         String?
-  role          UserRole  @default(member)
-  isActive      Boolean   @default(false) @map("is_active")
+  role          UserRole  @default(user)
   timeZone      String?   @map("time_zone")
   createdAt     DateTime  @default(now()) @map("created_at")
   updatedAt     DateTime  @updatedAt @map("updated_at")

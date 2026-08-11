@@ -15,45 +15,12 @@ export const auth = betterAuth({
   trustedOrigins: serverEnv.TRUSTED_ORIGINS,
   database: prismaAdapter(db, { provider: 'postgresql' }),
   emailAndPassword: { enabled: true },
-  user: {
-    additionalFields: {
-      role: {
-        type: 'string',
-        defaultValue: UserRole.enum.member,
-      },
-      isActive: {
-        type: 'boolean',
-        defaultValue: false,
-      },
-    },
-  },
-  databaseHooks: {
-    user: {
-      create: {
-        before: async (user) => {
-          // First user becomes admin and is auto-activated
-          const userCount = await db.user.count();
-          if (userCount === 0) {
-            return {
-              data: {
-                ...user,
-                role: UserRole.enum.admin,
-                emailVerified: true,
-                isActive: true,
-              },
-            };
-          }
-          return { data: user };
-        },
-      },
-    },
-  },
   plugins: [
-    tanstackStartCookies(),
     admin({
-      defaultRole: UserRole.enum.member,
+      defaultRole: UserRole.enum.user,
       adminRoles: [UserRole.enum.admin],
     }),
+    tanstackStartCookies(),
     ...(isTestEnv ? [testUtils()] : []),
   ],
   advanced: {
