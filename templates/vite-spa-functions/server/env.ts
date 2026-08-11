@@ -5,15 +5,7 @@ const Env = z
     ENV: z.enum(['development', 'production']),
 
     // DB
-    POSTGRES_HOST: z.string(),
-    POSTGRES_PORT: z
-      .string()
-      .min(1)
-      .max(5)
-      .transform((v) => Number.parseInt(v, 10)),
-    POSTGRES_USER: z.string(),
-    POSTGRES_PASSWORD: z.string(),
-    POSTGRES_NAME: z.string(),
+    DATABASE_URL: z.string(),
 
     // Auth
     BETTER_AUTH_SECRET: z.string().min(1, {
