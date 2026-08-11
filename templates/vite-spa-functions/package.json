@@ -2,17 +2,7 @@
   "name": "@samhwang/vite-react-starter-template",
   "version": "1.0.0",
   "description": "Vite + React Starter Template",
-  "msw": {
-    "workerDirectory": [
-      "public"
-    ]
-  },
   "type": "module",
-  "engines": {
-    "node": "^22.0.0",
-    "pnpm": "^10.0.0"
-  },
-  "packageManager": "pnpm@10.28.1",
   "scripts": {
     "prepare": "pnpm run githooks:init",
     "githooks:init": "husky",
@@ -26,10 +16,10 @@
     "test:watch": "vitest watch",
     "test:CI": "pnpm run test && pnpm run typecheck",
     "test:preview": "vitest-preview",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "lint:fix:unsafe": "biome check --write --unsafe .",
-    "ci": "biome ci .",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint:fix": "oxlint --fix . && oxfmt --write .",
+    "lint:fix:unsafe": "oxlint --fix-dangerously . && oxfmt --write .",
+    "ci": "oxlint . && oxfmt --check .",
     "prisma:generate": "prisma generate",
     "prisma:push": "dotenvx run -- prisma push",
     "prisma:migrate": "dtoenvx run -- prisma migrate dev",
@@ -60,7 +50,6 @@
   },
   "devDependencies": {
     "@better-auth/cli": "^1.4.21",
-    "@biomejs/biome": "^2.3.11",
     "@cloudflare/vite-plugin": "^1.21.1",
     "@tanstack/router-cli": "^1.154.4",
     "@tanstack/router-vite-plugin": "^1.154.6",
@@ -80,6 +69,9 @@
     "husky": "^9.1.7",
     "jsdom": "^27.4.0",
     "msw": "^2.12.7",
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0",
+    "oxlint-tsgolint": "^0.22.0",
     "prisma": "^7.3.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
@@ -87,5 +79,15 @@
     "vitest": "^4.0.17",
     "vitest-preview": "^0.0.3",
     "wrangler": "^4.59.3"
+  },
+  "engines": {
+    "node": "^22.0.0",
+    "pnpm": "^10.0.0"
+  },
+  "packageManager": "pnpm@10.28.1",
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

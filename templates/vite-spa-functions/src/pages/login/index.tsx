@@ -1,5 +1,6 @@
 import { useForm } from '@tanstack/react-form';
 import { z } from 'zod';
+
 import { authClient } from '../../../server/auth/client';
 
 const signinSchema = z.object({
@@ -29,7 +30,7 @@ function Login() {
       onSubmit={(e) => {
         e.preventDefault();
         e.stopPropagation();
-        form.handleSubmit();
+        void form.handleSubmit();
       }}
     >
       <form.Field name="username">

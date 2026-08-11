@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { PrismaPg } from '@prisma/adapter-pg';
+
 import { defineConfig } from 'prisma/config';
 
 export default defineConfig({

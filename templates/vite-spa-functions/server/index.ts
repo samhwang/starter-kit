@@ -3,6 +3,7 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import { requestId } from 'hono/request-id';
+
 import { createAuth } from './auth/server';
 import { getDbClient } from './db';
 import { appRouter } from './orpc/router';

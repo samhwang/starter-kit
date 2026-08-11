@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+
 import App from './app';
 
 async function renderRoot() {
@@ -19,4 +20,4 @@ async function renderRoot() {
   root.render(RootComponent);
 }
 
-renderRoot();
+void renderRoot();

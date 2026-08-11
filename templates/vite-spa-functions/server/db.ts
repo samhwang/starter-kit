@@ -1,5 +1,6 @@
 import { PrismaNeon } from '@prisma/adapter-neon';
 import { PrismaPg } from '@prisma/adapter-pg';
+
 import { loadEnv } from './env';
 import { PrismaClient } from './generated/prisma/client';
 
