@@ -6,7 +6,7 @@
     "node": "^24.0.0",
     "pnpm": "^11.0.0"
   },
-  "packageManager": "pnpm@11.2.2",
+  "packageManager": "pnpm@11.21.0",
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -26,7 +26,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "start": "tsx bin/index.ts",
+    "start": "oxnode bin/index.ts",
     "build": "tsdown",
     "prepublishOnly": "pnpm run build",
     "typecheck": "tsc",
@@ -39,16 +39,16 @@
     "ci": "oxlint . && oxfmt --check ."
   },
   "devDependencies": {
-    "@types/node": "^25.9.1",
-    "@vitest/coverage-v8": "^4.1.7",
+    "@oxc-node/core": "^0.1.0",
+    "@types/node": "^26.2.0",
+    "@vitest/coverage-v8": "^4.1.10",
     "husky": "^9.1.7",
     "lint-prepush": "^3.0.3",
-    "lint-staged": "^17.0.5",
-    "oxfmt": "^0.51.0",
-    "oxlint": "^1.66.0",
-    "tsdown": "^0.22.0",
-    "tsx": "^4.22.3",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.7"
+    "lint-staged": "^17.3.0",
+    "oxfmt": "^0.62.0",
+    "oxlint": "^1.77.0",
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
   }
 }
