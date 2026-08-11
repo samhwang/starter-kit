@@ -1,7 +1,5 @@
 import { getDbClient } from '../db';
-import { loadEnv } from '../env';
 import { createAuth } from './server';
 
-const env = loadEnv();
-const db = getDbClient(env.DATABASE_URL);
+const db = getDbClient();
 export const auth = createAuth(db);

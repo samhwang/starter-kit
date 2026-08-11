@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const Env = z.object({
+const ServerEnv = z.object({
   ENV: z.enum(['development', 'production']),
 
   // DB
@@ -12,13 +12,15 @@ const Env = z.object({
   }),
   BETTER_AUTH_URL: z.url(),
 });
+type ServerEnv = z.infer<typeof ServerEnv>;
 
 declare global {
   namespace Cloudflare {
-    interface Env extends z.infer<typeof Env> {}
+    interface Env extends z.infer<typeof ServerEnv> {}
   }
 }
 
-export function loadEnv() {
-  return Env.parse(process.env);
+export function loadServerEnv(): ServerEnv {
+  return ServerEnv.parse(process.env);
 }
+export const serverEnv = loadServerEnv();
