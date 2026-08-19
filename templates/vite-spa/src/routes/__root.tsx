@@ -1,9 +1,9 @@
-import { createRootRoute, HeadContent, Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtoolsPanel } from '@tanstack/react-query-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
 import { formDevtoolsPlugin } from '@tanstack/react-form-devtools';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtoolsPanel } from '@tanstack/react-query-devtools';
+import { createRootRoute, HeadContent, Outlet } from '@tanstack/react-router';
+import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 
 const queryClient = new QueryClient();
 
@@ -14,27 +14,29 @@ function NotFoundComponent() {
 export function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
-      <html>
+      <html lang="en">
         <head>
           <HeadContent />
         </head>
         <body>
           <Outlet />
           <TanStackDevtools
-          plugins={[              {
-            name: 'TanStack Router',
-            render: <TanStackRouterDevtoolsPanel />,
-          },
-          {
-            name: 'TanStack Query',
-            render: <ReactQueryDevtoolsPanel />,
-          },
-          formDevtoolsPlugin(),]}
+            plugins={[
+              {
+                name: 'TanStack Router',
+                render: <TanStackRouterDevtoolsPanel />,
+              },
+              {
+                name: 'TanStack Query',
+                render: <ReactQueryDevtoolsPanel />,
+              },
+              formDevtoolsPlugin(),
+            ]}
           />
         </body>
       </html>
     </QueryClientProvider>
-  )
+  );
 }
 
 export const Route = createRootRoute({

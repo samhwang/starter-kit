@@ -24,10 +24,10 @@
     "husky": "^9.1.7",
     "lint-prepush": "^3.0.3",
     "lint-staged": "^17.3.0",
-    "oxfmt": "^0.62.0",
-    "oxlint": "^1.77.0",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
     "tsdown": "^0.22.14",
-    "tsx": "^4.23.11",
+    "tsx": "^4.23.12",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10"
   },
@@ -35,5 +35,5 @@
     "node": "^24.0.0",
     "pnpm": "^11.0.0"
   },
-  "packageManager": "pnpm@11.21.0"
+  "packageManager": "pnpm@11.22.0"
 }

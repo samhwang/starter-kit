@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "Vite + React SPA Starter Template",
   "type": "module",
-  "engines": {
-    "node": "^24.0.0",
-    "pnpm": "^11.0.0"
-  },
-  "packageManager": "pnpm@11.21.0",
   "scripts": {
     "prepare": "pnpm run githooks:init",
     "githooks:init": "husky",
@@ -27,28 +22,28 @@
     "ci": "oxlint . && oxfmt --check ."
   },
   "dependencies": {
-    "@tanstack/react-devtools": "^0.10.9",
-    "@tanstack/react-form": "^1.33.4",
-    "@tanstack/react-form-devtools": "^0.2.33",
+    "@tanstack/react-devtools": "^0.10.10",
+    "@tanstack/react-form": "^1.33.5",
+    "@tanstack/react-form-devtools": "^0.2.34",
     "@tanstack/react-query": "^5.101.4",
     "@tanstack/react-query-devtools": "^5.101.4",
-    "@tanstack/react-router": "^1.170.25",
+    "@tanstack/react-router": "^1.170.29",
     "@tanstack/react-router-devtools": "^1.167.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-error-boundary": "^6.1.2",
+    "react-error-boundary": "^6.1.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@oxc-node/core": "^0.1.0",
     "@rolldown/plugin-babel": "^0.2.3",
     "@tanstack/devtools-vite": "^0.8.3",
-    "@tanstack/router-cli": "^1.167.27",
-    "@tanstack/router-vite-plugin": "^1.167.29",
+    "@tanstack/router-cli": "^1.167.30",
+    "@tanstack/router-vite-plugin": "^1.167.32",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.2",
-    "@testing-library/user-event": "^14.6.3",
+    "@testing-library/user-event": "^14.6.4",
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
@@ -61,11 +56,16 @@
     "lint-prepush": "^3.0.3",
     "lint-staged": "^17.3.0",
     "msw": "^2.15.0",
-    "oxfmt": "^0.62.0",
-    "oxlint": "^1.77.0",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
     "typescript": "^7.0.2",
     "vite": "^8.2.1",
     "vitest": "^4.1.10",
     "vitest-preview": "^0.0.3"
-  }
+  },
+  "engines": {
+    "node": "^24.0.0",
+    "pnpm": "^11.0.0"
+  },
+  "packageManager": "pnpm@11.22.0"
 }

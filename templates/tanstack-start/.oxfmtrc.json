@@ -7,5 +7,6 @@
   "singleQuote": true,
   "jsxSingleQuote": false,
   "arrowParens": "always",
-  "sortImports": true
+  "sortImports": true,
+  "ignorePatterns": ["src/routeTree.gen.ts"]
 }

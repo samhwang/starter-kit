@@ -9,9 +9,5 @@
   "jsxSingleQuote": false,
   "arrowParens": "always",
   "sortImports": true,
-  "ignorePatterns": [
-    "**/dist",
-    "**/src/routeTree.gen.ts",
-    "**/src/**/__snapshots__",
-  ]
+  "ignorePatterns": ["**/dist", "**/src/routeTree.gen.ts", "**/src/**/__snapshots__"]
 }
