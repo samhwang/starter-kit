@@ -36,15 +36,15 @@
   "devDependencies": {
     "@oxc-node/core": "^0.1.0",
     "@types/node": "^26.2.0",
-    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/coverage-v8": "^4.1.11",
     "husky": "^9.1.7",
     "lint-prepush": "^3.0.3",
     "lint-staged": "^17.3.0",
-    "oxfmt": "^0.63.0",
-    "oxlint": "^1.78.0",
+    "oxfmt": "^0.64.0",
+    "oxlint": "^1.79.0",
     "tsdown": "^0.22.14",
     "typescript": "^7.0.2",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.11"
   },
   "engines": {
     "node": "^24.0.0",
