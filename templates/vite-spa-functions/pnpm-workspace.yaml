@@ -2,9 +2,12 @@ allowBuilds:
   '@prisma/client': true
   '@prisma/engines': true
   better-sqlite3: true
+  cpu-features: true
   esbuild: true
   msw: true
   prisma: true
+  protobufjs: true
+  ssh2: true
   workerd: true
 minimumReleaseAgeExclude:
   - '@better-auth/core@1.7.1'

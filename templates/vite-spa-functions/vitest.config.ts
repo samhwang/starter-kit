@@ -10,6 +10,7 @@ export default mergeConfig(
       globals: true,
       environment: 'jsdom',
       setupFiles: ['./vitest.setup.ts'],
+      exclude: ['**/node_modules/**', '**/dist/**', 'server/**', 'test/**'],
       coverage: {
         provider: 'v8',
         enabled: true,
