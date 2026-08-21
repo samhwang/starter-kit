@@ -1,5 +1,5 @@
 {
-  "name": "vite-spa",
+  "name": "react-spa",
   "version": "1.0.0",
   "description": "Vite + React SPA Starter Template",
   "type": "module",
@@ -58,6 +58,7 @@
     "msw": "^2.15.0",
     "oxfmt": "^0.64.0",
     "oxlint": "^1.79.0",
+    "oxlint-tsgolint": "^7.0.2001",
     "typescript": "^7.0.2",
     "vite": "^8.2.1",
     "vitest": "^4.1.11",

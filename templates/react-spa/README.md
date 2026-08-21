@@ -3,7 +3,7 @@
 ## Using this template
 
 ```shell
-npx degit samhwang/starter-kit/templates/vite-spa
+npx degit samhwang/starter-kit/templates/react-spa
 ```
 
 ## Batteries included

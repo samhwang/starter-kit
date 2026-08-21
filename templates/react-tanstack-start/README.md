@@ -3,7 +3,7 @@
 ## Using this template
 
 ```shell
-npx degit samhwang/starter-kit/templates/tanstack-start
+npx degit samhwang/starter-kit/templates/react-tanstack-start
 ```
 
 ## Batteries included

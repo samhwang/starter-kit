@@ -16,5 +16,5 @@
     "isolatedModules": false,
     "noEmit": true
   },
-  "include": ["src", "bin", "tsdown.config.ts", "vitest.config.mts"]
+  "include": ["src", "bin", "tsdown.config.ts", "vitest.config.mts", "oxlint.config.ts", "oxfmt.config.ts"]
 }

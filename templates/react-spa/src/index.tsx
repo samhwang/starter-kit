@@ -20,4 +20,4 @@ async function renderRoot() {
   root.render(RootComponent);
 }
 
-renderRoot();
+void renderRoot();
