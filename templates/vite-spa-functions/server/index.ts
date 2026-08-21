@@ -5,7 +5,7 @@ import { logger } from 'hono/logger';
 import { requestId } from 'hono/request-id';
 
 import { auth } from './auth/server';
-import { appRouter } from './orpc/router';
+import { appRouter } from './router';
 
 const app = new Hono<{ Bindings: Cloudflare.Env }>().basePath('/api');
 
@@ -19,6 +19,7 @@ app.use('/rpc/**', async (c, next) => {
     prefix: '/api/rpc',
     context: {
       env: c.env,
+      headers: c.req.raw.headers,
     },
   });
 

@@ -5,36 +5,46 @@ import * as z from 'zod';
 import { authClient } from '../auth/client';
 import { useAuthForm } from '../auth/hooks/useAuthForm';
 
-const LoginSchema = z.object({
-  email: z.email(),
-  password: z.string().min(1),
+const RegisterSchema = z
+  .object({
+    name: z.string().min(1),
+    email: z.email(),
+    password: z.string().min(8),
+    confirmPassword: z.string().min(8),
+  })
+  .refine((value) => value.password === value.confirmPassword, {
+    message: 'Passwords do not match',
+    path: ['confirmPassword'],
+  });
+
+export const Route = createFileRoute('/register')({
+  component: RegisterPage,
 });
 
-export const Route = createFileRoute('/login')({
-  component: LoginPage,
-});
-
-function LoginPage() {
+function RegisterPage() {
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const form = useAuthForm({
     defaultValues: {
+      name: '',
       email: '',
       password: '',
+      confirmPassword: '',
     },
     validators: {
-      onSubmit: LoginSchema,
+      onSubmit: RegisterSchema,
     },
     onSubmit: async ({ value }) => {
       setError(null);
 
-      const { error } = await authClient.signIn.email({
+      const { error } = await authClient.signUp.email({
+        name: value.name,
         email: value.email,
         password: value.password,
       });
       if (error) {
-        setError(error.message ?? 'Sign in failed');
+        setError(error.message ?? 'Sign up failed');
         return;
       }
       await navigate({ to: '/dashboard' });
@@ -43,7 +53,7 @@ function LoginPage() {
 
   return (
     <main>
-      <h1>Sign in</h1>
+      <h1>Create an account</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -51,13 +61,17 @@ function LoginPage() {
           void form.handleSubmit();
         }}
       >
+        <form.AppField name="name">{(field) => <field.AuthField label="Name" type="text" placeholder="Jane Doe" />}</form.AppField>
         <form.AppField name="email">{(field) => <field.AuthField label="Email" type="email" placeholder="you@example.com" />}</form.AppField>
-        <form.AppField name="password">{(field) => <field.AuthField label="Password" type="password" placeholder="••••••••" />}</form.AppField>
+        <form.AppField name="password">{(field) => <field.AuthField label="Password" type="password" placeholder="At least 8 characters" />}</form.AppField>
+        <form.AppField name="confirmPassword">
+          {(field) => <field.AuthField label="Confirm password" type="password" placeholder="Repeat password" />}
+        </form.AppField>
 
         {error && <p>{error}</p>}
 
         <button type="submit" disabled={form.state.isSubmitting}>
-          Sign in
+          Create account
         </button>
       </form>
     </main>
