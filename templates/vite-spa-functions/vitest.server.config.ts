@@ -6,7 +6,8 @@ import { defineConfig, type Plugin } from 'vitest/config';
 // Prisma generates its client with `runtime = "workerd"`, which imports the
 // query compiler via `*.wasm?module`. That syntax is handled by the Cloudflare
 // Vite plugin during normal builds, but this config runs tests in plain Node,
-// so we provide an equivalent loader here.
+// so we provide an equivalent loader here. (vite-plugin-wasm only supports
+// the standard `?init` syntax, not Cloudflare's `?module`.)
 function wasmModuleLoader(): Plugin {
   return {
     name: 'wasm-module-loader',
