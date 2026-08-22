@@ -3,7 +3,7 @@ services:
     image: postgres:18-alpine
     env_file: .env
     volumes:
-      - ./.docker/postgres/data:/var/lib/postgresql/data
+      - ./.docker/postgres:/var/lib/postgresql
     ports:
       - 5432:5432
     healthcheck:

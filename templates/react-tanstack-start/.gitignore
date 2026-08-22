@@ -16,7 +16,7 @@ coverage
 .content-collections
 **/generated
 base
-.docker/**/data
+.docker
 .claude
 .playwright
 .agents/tickets
