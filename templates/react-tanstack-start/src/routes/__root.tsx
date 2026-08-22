@@ -1,7 +1,7 @@
 import { TanStackDevtools } from '@tanstack/react-devtools';
 import { formDevtoolsPlugin } from '@tanstack/react-form-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ReactQueryDevtools, ReactQueryDevtoolsPanel } from '@tanstack/react-query-devtools';
 import { createRootRoute, HeadContent, Link, Outlet, Scripts } from '@tanstack/react-router';
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 
@@ -66,9 +66,12 @@ function RootComponent() {
                 name: 'TanStack Router',
                 render: <TanStackRouterDevtoolsPanel />,
               },
+              {
+                name: 'TanStack Query',
+                render: <ReactQueryDevtoolsPanel />,
+              }
             ]}
           />
-          <ReactQueryDevtools initialIsOpen={false} />
           <Scripts />
         </body>
       </html>
