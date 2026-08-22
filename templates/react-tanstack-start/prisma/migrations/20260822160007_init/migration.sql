@@ -49,6 +49,7 @@ CREATE TABLE "accounts" (
     "password" TEXT,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3) NOT NULL,
+    "issuer" TEXT NOT NULL,
 
     CONSTRAINT "accounts_pkey" PRIMARY KEY ("id")
 );
@@ -86,6 +87,9 @@ CREATE INDEX "sessions_user_id_idx" ON "sessions"("user_id");
 
 -- CreateIndex
 CREATE INDEX "accounts_user_id_idx" ON "accounts"("user_id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "account_issuer_accountId_uidx" ON "accounts"("issuer", "account_id");
 
 -- CreateIndex
 CREATE INDEX "verifications_identifier_idx" ON "verifications"("identifier");

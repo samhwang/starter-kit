@@ -24,6 +24,7 @@
     "prisma:generate": "prisma generate",
     "prisma:push": "dotenvx run -- prisma db push",
     "prisma:migrate": "dotenvx run -- prisma migrate dev",
+    "auth:secret": "better-auth secret",
     "auth:generate": "dotenvx run -- better-auth generate --config ./server/auth/server.ts",
     "wrangler:generate": "wrangler types server/generated/worker-configuration.d.ts --env-file .env.sample"
   },
