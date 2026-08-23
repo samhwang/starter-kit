@@ -36,6 +36,7 @@
     "@prisma/adapter-neon": "^7.9.1",
     "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
+    "@tanstack/react-devtools": "^0.10.12",
     "@tanstack/react-form": "^1.33.5",
     "@tanstack/react-query": "^5.101.4",
     "@tanstack/react-query-devtools": "^5.101.4",
@@ -52,6 +53,7 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.53.1",
+    "@tanstack/react-form-devtools": "^0.2.34",
     "@tanstack/router-cli": "^1.167.32",
     "@tanstack/router-vite-plugin": "^1.167.34",
     "@testcontainers/postgresql": "^12.1.0",
