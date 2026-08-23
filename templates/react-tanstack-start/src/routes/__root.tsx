@@ -69,7 +69,7 @@ function RootComponent() {
               {
                 name: 'TanStack Query',
                 render: <ReactQueryDevtoolsPanel />,
-              }
+              },
             ]}
           />
           <Scripts />
