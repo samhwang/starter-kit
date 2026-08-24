@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "vite build",
+    "build": "pnpm run prisma:generate && vite build",
     "preview": "vite preview",
     "start": "dotenvx run -- node .output/server/index.mjs",
     "test": "dotenvx run -- vitest run",
@@ -23,7 +23,7 @@
     "prisma:migrate:dev": "dotenvx run -- prisma migrate dev",
     "prisma:migrate:prod": "dotenvx run -- prisma migrate deploy",
     "prisma:format": "dotenvx run -- prisma format",
-    "prisma:generate": "dotenvx run -- prisma generate",
+    "prisma:generate": "prisma generate",
     "prisma:studio": "dotenvx run -- prisma studio",
     "auth:generate": "dotenvx run -- better-auth generate --config ./src/auth/server.ts",
     "auth:secret": "better-auth secret"
