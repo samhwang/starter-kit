@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { createFileRoute, redirect, useNavigate } from '@tanstack/react-router';
 
+import { orpc } from '../api/client';
 import { authClient } from '../auth/client';
-import { orpc } from '../orpc';
 
 export const Route = createFileRoute('/dashboard')({
   beforeLoad: async () => {

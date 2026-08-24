@@ -39,8 +39,8 @@ public/mockServiceWorker.js
 # Docker
 .docker
 
-# Prisma generated files
-server/generated/prisma
+# Generated code
+src/**/generated/
 
-# Wrangler generated files
-server/generated/worker-configuration.d.ts
+# TypeScript build info
+*.tsbuildinfo

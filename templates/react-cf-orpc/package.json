@@ -1,5 +1,5 @@
 {
-  "name": "@samhwang/vite-react-starter-template",
+  "name": "@samhwang/react-cf-orpc",
   "version": "1.0.0",
   "description": "Vite + React Starter Template",
   "type": "module",
@@ -25,8 +25,8 @@
     "prisma:migrate:dev": "dotenvx run -- prisma migrate dev",
     "prisma:migrate:prod": "dotenvx run -- prisma migrate deploy",
     "auth:secret": "better-auth secret",
-    "auth:generate": "dotenvx run -- better-auth generate --config ./server/auth/server.ts",
-    "wrangler:generate": "wrangler types server/generated/worker-configuration.d.ts --env-file .env.sample"
+    "auth:generate": "dotenvx run -- better-auth generate --config ./src/auth/server.ts",
+    "wrangler:generate": "mkdir -p src/api/generated && wrangler types src/api/generated/worker-configuration.d.ts --env-file .env.sample"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^2.21.0",

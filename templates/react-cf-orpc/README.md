@@ -31,6 +31,29 @@ pnpm run format
 pnpm run build
 ```
 
+## Project Structure
+
+```
+├── prisma/                     # Database schema (Better Auth models)
+├── src/
+│   ├── api/                    # oRPC router, procedures, generated wrangler types
+│   │   ├── lib/                #   shared context + procedure builder
+│   │   ├── user/               #   user procedures
+│   │   └── generated/          #   wrangler types (gitignored)
+│   ├── auth/                   # Better Auth server/client + auth middleware
+│   ├── config/                 # Env validation (zod)
+│   ├── database/               # Prisma client
+│   │   ├── lib/
+│   │   └── generated/          #   prisma client (gitignored)
+│   ├── routes/                 # TanStack Router file-based routes
+│   └── server.ts               # Hono entry: /api/rpc (oRPC) + /api/auth (Better Auth)
+└── docker-compose.yml          # PostgreSQL for local dev
+```
+
+Server-side files live beside their client counterparts inside each domain;
+server-only tests are named `*.server.test.ts` and run in a separate node-env
+vitest project (`pnpm test:server`) backed by a containerised Postgres.
+
 ## Deployment
 
 This template is meant to be deployed on the [Cloudflare Workers](https://workers.cloudflare.com) platform.

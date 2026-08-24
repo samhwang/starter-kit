@@ -6,7 +6,7 @@
 
 generator client {
   provider   = "prisma-client"
-  output     = "../server/generated/prisma"
+  output     = "../src/database/generated/prisma"
   engineType = "client"
   runtime    = "workerd"
 }
@@ -67,6 +67,16 @@ model Account {
   @@map("account")
   @@index([userId])
   @@unique([issuer, accountId], map: "account_issuer_accountId_uidx")
+}
+
+model RateLimit {
+  id          String @id
+  key         String
+  count       Int
+  lastRequest BigInt
+
+  @@unique([key])
+  @@map("rateLimit")
 }
 
 model Verification {

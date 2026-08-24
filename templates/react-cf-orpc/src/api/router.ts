@@ -1,4 +1,4 @@
-import { publicProcedure } from './orpc/builder';
+import { publicProcedure } from './lib/builder';
 import { userRouter } from './user/router';
 
 export const appRouter = {

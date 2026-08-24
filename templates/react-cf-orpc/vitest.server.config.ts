@@ -37,7 +37,7 @@ function wasmModuleLoader(): Plugin {
 export default defineConfig({
   plugins: [wasmModuleLoader()],
   test: {
-    include: ['src/**/*.test.ts', 'server/**/*.test.ts'],
+    include: ['src/**/*.server.test.ts'],
     environment: 'node',
     globalSetup: ['./test/globalSetup.ts'],
     setupFiles: ['./test/per-file-db.ts'],

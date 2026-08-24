@@ -4,8 +4,8 @@ import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
 import { requestId } from 'hono/request-id';
 
+import { appRouter } from './api/router';
 import { auth } from './auth/server';
-import { appRouter } from './router';
 
 const app = new Hono<{ Bindings: Cloudflare.Env }>().basePath('/api');
 
