@@ -11,11 +11,11 @@
     "typecheck": "tsc",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:CI": "pnpm run test && pnpm run typecheck",
+    "test:coverage": "vitest run --coverage",
     "lint": "oxlint . && oxfmt --check .",
     "lint:fix": "oxlint --fix . && oxfmt --write .",
     "lint:fix:unsafe": "oxlint --fix-dangerously . && oxfmt --write .",
-    "ci": "oxlint . && oxfmt --check ."
+    "ci": "pnpm run lint && pnpm run typecheck && pnpm run test"
   },
   "devDependencies": {
     "@oxc-node/core": "^0.1.0",
@@ -28,7 +28,6 @@
     "oxlint": "^1.79.0",
     "oxlint-tsgolint": "^7.0.2001",
     "tsdown": "^0.22.14",
-    "tsx": "^4.23.12",
     "typescript": "^7.0.2",
     "vitest": "^4.1.11"
   },

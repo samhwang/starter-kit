@@ -70,7 +70,6 @@ minimumReleaseAgeExclude:
   - '@vitest/runner@4.1.11'
   - '@vitest/snapshot@4.1.11'
   - '@vitest/spy@4.1.11'
-  - '@vitest/ui@4.1.11'
   - '@vitest/utils@4.1.11'
   - better-auth@1.7.1
   - hono@4.13.3

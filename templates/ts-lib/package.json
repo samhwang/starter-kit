@@ -27,11 +27,11 @@
     "typecheck": "tsc",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:CI": "pnpm run test && pnpm run typecheck",
+    "test:coverage": "vitest run --coverage",
     "lint": "oxlint . && oxfmt --check .",
     "lint:fix": "oxlint --fix . && oxfmt --write .",
     "lint:fix:unsafe": "oxlint --fix-dangerously . && oxfmt --write .",
-    "ci": "oxlint . && oxfmt --check ."
+    "ci": "pnpm run lint && pnpm run typecheck && pnpm run test"
   },
   "devDependencies": {
     "@oxc-node/core": "^0.1.0",

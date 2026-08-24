@@ -11,15 +11,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc",
-    "test": "vitest",
-    "test:run": "vitest run",
+    "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:CI": "pnpm run test && pnpm run typecheck",
+    "test:coverage": "vitest run --coverage",
     "test:preview": "vitest-preview",
     "lint": "oxlint . && oxfmt --check .",
     "lint:fix": "oxlint --fix . && oxfmt --write .",
     "lint:fix:unsafe": "oxlint --fix-dangerously . && oxfmt --write .",
-    "ci": "oxlint . && oxfmt --check ."
+    "ci": "pnpm run lint && pnpm run typecheck && pnpm run test"
   },
   "dependencies": {
     "@tanstack/react-devtools": "^0.10.12",
@@ -49,7 +48,6 @@
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
     "@vitest/coverage-v8": "^4.1.11",
-    "@vitest/ui": "^4.1.11",
     "babel-plugin-react-compiler": "^1.0.0",
     "husky": "^9.1.7",
     "jsdom": "^30.0.1",
