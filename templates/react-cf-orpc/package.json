@@ -22,7 +22,8 @@
     "ci": "pnpm run lint && pnpm run typecheck && pnpm run test",
     "prisma:generate": "prisma generate",
     "prisma:push": "dotenvx run -- prisma db push",
-    "prisma:migrate": "dotenvx run -- prisma migrate dev",
+    "prisma:migrate:dev": "dotenvx run -- prisma migrate dev",
+    "prisma:migrate:prod": "dotenvx run -- prisma migrate deploy",
     "auth:secret": "better-auth secret",
     "auth:generate": "dotenvx run -- better-auth generate --config ./server/auth/server.ts",
     "wrangler:generate": "wrangler types server/generated/worker-configuration.d.ts --env-file .env.sample"
