@@ -53,6 +53,8 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.54.0",
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@tanstack/devtools-vite": "^0.8.5",
     "@tanstack/react-form-devtools": "^0.2.34",
     "@tanstack/router-cli": "^1.167.33",
     "@tanstack/router-vite-plugin": "^1.167.35",
