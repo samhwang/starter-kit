@@ -1,15 +1,13 @@
-import { PrismaPg } from '@prisma/adapter-pg';
+import { drizzle } from 'drizzle-orm/postgres-js';
 
 import { serverEnv } from '../../config/lib/env.server';
-import { PrismaClient } from '../generated/prisma/client';
+import { authRelations } from '../schema';
 
-let db: PrismaClient | undefined;
+let db: ReturnType<typeof drizzle> | undefined;
 
 export function getDbClient() {
   if (!db) {
-    const adapter = new PrismaPg({ connectionString: serverEnv.DATABASE_URL });
-    db = new PrismaClient({ adapter });
+    db = drizzle(serverEnv.DATABASE_URL, { relations: { ...authRelations } });
   }
-
   return db;
 }

@@ -1,16 +1,27 @@
-import { PrismaNeon } from '@prisma/adapter-neon';
-import { PrismaPg } from '@prisma/adapter-pg';
+import { neon } from '@neondatabase/serverless';
+import { drizzle as drizzleNeon } from 'drizzle-orm/neon-http';
+import { drizzle as drizzlePg } from 'drizzle-orm/node-postgres';
+import { Pool } from 'pg';
 
 import { serverEnv } from '../../config/lib/env.server';
-import { PrismaClient } from '../generated/prisma/client';
+import { authRelations } from '../schema/auth';
 
-let db: PrismaClient | undefined;
+let db: ReturnType<typeof drizzlePg> | ReturnType<typeof drizzleNeon> | undefined;
 
-export function getDbClient(): PrismaClient {
+export function getDbClient() {
   if (!db) {
     const connectionString = serverEnv.DATABASE_URL;
-    const adapter = serverEnv.ENV === 'development' ? new PrismaPg({ connectionString }) : new PrismaNeon({ connectionString });
-    db = new PrismaClient({ adapter });
+    if (serverEnv.ENV === 'development') {
+      db = drizzlePg({
+        client: new Pool({ connectionString }),
+        relations: { ...authRelations },
+      });
+    } else {
+      db = drizzleNeon({
+        client: neon(connectionString),
+        relations: { ...authRelations },
+      });
+    }
   }
 
   return db;

@@ -1,7 +1,7 @@
 import { os } from '@orpc/server';
 
-import type { HonoContext } from './context';
+import type { HonoOrpcContext } from './context';
 
-const o = os.$context<HonoContext>();
+const o = os.$context<HonoOrpcContext>();
 
 export const publicProcedure = o;

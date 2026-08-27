@@ -8,7 +8,7 @@ async function getTestHelpers(): Promise<TestHelpers> {
   return (ctx as unknown as { test: TestHelpers }).test;
 }
 
-describe('auth (Better Auth + Prisma)', () => {
+describe('auth (Better Auth + Drizzle)', () => {
   it('creates a user and reads the session back', async () => {
     const test = await getTestHelpers();
     const user = await test.saveUser(test.createUser({ email: 'test@example.com', name: 'Test User', emailVerified: true }));

@@ -3,12 +3,12 @@ import childProcess from 'node:child_process';
 import { PostgreSqlContainer, type StartedPostgreSqlContainer } from '@testcontainers/postgresql';
 
 function pushSchema(databaseUrl: string) {
-  console.log('Running Prisma Push');
+  console.log('Running Drizzle Push');
   process.env.DATABASE_URL = databaseUrl;
-  childProcess.execSync(`pnpm run prisma:push --url "${databaseUrl}"`, {
+  childProcess.execSync(`pnpm run drizzle:push --url "${databaseUrl}"`, {
     env: { ...process.env, DATABASE_URL: databaseUrl },
   });
-  console.log('Prisma Push complete');
+  console.log('Drizzle Push complete');
 }
 
 export async function setup() {

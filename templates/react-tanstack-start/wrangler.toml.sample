@@ -4,8 +4,7 @@
 
 name = "react-tanstack-start"
 main = "dist/server/index.mjs"
-compatibility_date = "2025-01-01"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2026-08-04"
 
 [vars]
 DEPLOYMENT_ENV = "cloudflare"
