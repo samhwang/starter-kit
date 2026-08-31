@@ -6,11 +6,7 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      css: true,
       globals: true,
-      environment: 'jsdom',
-      setupFiles: ['./vitest.setup.ts'],
-      exclude: ['**/node_modules/**', '**/dist/**', '**/*.server.test.ts', 'test/**'],
       coverage: {
         provider: 'v8',
         enabled: true,
@@ -20,6 +16,26 @@ export default mergeConfig(
       typecheck: {
         enabled: true,
       },
+      projects: [
+        {
+          test: {
+            name: 'server',
+            include: ['src/**/*.server.test.ts'],
+            environment: 'node',
+            globalSetup: ['./test/globalSetup.ts'],
+            setupFiles: ['./test/per-file-db.ts'],
+          }
+        },
+        {
+          extends: true,
+          test: {
+            css: true,
+            environment: 'jsdom',
+            setupFiles: ['./vitest.setup.ts'],
+            exclude: ['**/node_modules/**', '**/dist/**', '**/*.server.test.ts', 'test/**'],
+          }
+        }
+      ],
     },
   })
 );
