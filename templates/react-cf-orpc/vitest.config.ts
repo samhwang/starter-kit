@@ -16,23 +16,26 @@ export default mergeConfig(
       typecheck: {
         enabled: true,
       },
+      exclude: ['**/node_modules/**', '**/dist/**', 'test/**'],
       projects: [
         {
           test: {
             name: 'server',
             include: ['src/**/*.server.test.ts'],
             environment: 'node',
-            globalSetup: ['./test/globalSetup.ts'],
+            globalSetup: ['./test/global-db-setup.ts'],
             setupFiles: ['./test/per-file-db.ts'],
           }
         },
         {
           extends: true,
           test: {
+            name: 'ui',
             css: true,
+            include: ['src/**/*.test.tsx'],
+            exclude: ['src/routes/'],
             environment: 'jsdom',
-            setupFiles: ['./vitest.setup.ts'],
-            exclude: ['**/node_modules/**', '**/dist/**', '**/*.server.test.ts', 'test/**'],
+            setupFiles: ['./test/ui-setup.ts'],
           }
         }
       ],

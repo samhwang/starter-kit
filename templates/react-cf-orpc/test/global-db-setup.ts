@@ -5,7 +5,7 @@ import { PostgreSqlContainer, type StartedPostgreSqlContainer } from '@testconta
 function pushSchema(databaseUrl: string) {
   console.log('Running Drizzle Push');
   process.env.DATABASE_URL = databaseUrl;
-  childProcess.execSync(`pnpm run drizzle:push --url "${databaseUrl}"`, {
+  childProcess.execSync(`pnpm run drizzle:push`, {
     env: { ...process.env, DATABASE_URL: databaseUrl },
   });
   console.log('Drizzle Push complete');
@@ -22,7 +22,7 @@ export async function setup() {
   process.env.DATABASE_URL = databaseUrl;
   process.env.ENV = 'development';
   process.env.BETTER_AUTH_SECRET = 'test-secret-that-is-at-least-32-characters-long!!';
-  process.env.BETTER_AUTH_URL = 'http://localhost:3000';
+  process.env.BETTER_AUTH_URL = 'http://localhost:5173';
 
   return async function teardown() {
     console.log('Stopping containers...');
