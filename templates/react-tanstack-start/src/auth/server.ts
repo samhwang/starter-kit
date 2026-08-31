@@ -27,11 +27,6 @@ export const auth = betterAuth({
     tanstackStartCookies(),
     ...(isTestEnv ? [testUtils()] : []),
   ],
-  advanced: {
-    database: {
-      generateId: false,
-    },
-  },
   rateLimit: {
     storage: 'database',
     modelName: 'rateLimit',

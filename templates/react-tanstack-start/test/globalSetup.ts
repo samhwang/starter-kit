@@ -5,7 +5,7 @@ import { PostgreSqlContainer, type StartedPostgreSqlContainer } from '@testconta
 function pushSchema(databaseUrl: string) {
   console.log('Running Drizzle Push');
   process.env.DATABASE_URL = databaseUrl;
-  childProcess.execSync(`pnpm run drizzle:push --url "${databaseUrl}"`, {
+  childProcess.execSync(`pnpm run drizzle:push`, {
     env: { ...process.env, DATABASE_URL: databaseUrl },
   });
   console.log('Drizzle Push complete');

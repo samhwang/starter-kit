@@ -1,7 +1,7 @@
 import { drizzle } from 'drizzle-orm/postgres-js';
 
 import { serverEnv } from '../../config/lib/env.server';
-import { authRelations } from '../schema';
+import { authRelations } from '../schema/auth';
 
 let db: ReturnType<typeof drizzle> | undefined;
 
