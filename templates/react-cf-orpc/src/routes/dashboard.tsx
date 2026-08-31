@@ -1,8 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
-import { createFileRoute, redirect, useNavigate } from '@tanstack/react-router';
+import { createFileRoute, redirect } from '@tanstack/react-router';
 
-import { orpc } from '../api/client';
 import { authClient } from '../auth/client';
+import { DashboardPage } from '../dashboard/pages';
 
 export const Route = createFileRoute('/dashboard')({
   beforeLoad: async () => {
@@ -13,25 +12,3 @@ export const Route = createFileRoute('/dashboard')({
   },
   component: DashboardPage,
 });
-
-function DashboardPage() {
-  const navigate = useNavigate();
-  const { data: user } = useQuery(orpc.user.me.queryOptions());
-
-  return (
-    <main>
-      <h1>Dashboard</h1>
-      {user && <p>Signed in as {user.email}</p>}
-
-      <button
-        type="button"
-        onClick={async () => {
-          await authClient.signOut();
-          await navigate({ to: '/' });
-        }}
-      >
-        Sign out
-      </button>
-    </main>
-  );
-}

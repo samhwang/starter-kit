@@ -1,9 +1,9 @@
-import { createFileRoute, redirect, useNavigate } from '@tanstack/react-router';
+import { createFileRoute, redirect } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/react-start';
 import { getRequestHeaders } from '@tanstack/react-start/server';
 
-import { authClient } from '../auth/client';
 import { auth } from '../auth/server';
+import { DashboardPage } from '../dashboard/pages';
 
 const getSession = createServerFn().handler(async () => {
   const headers = getRequestHeaders();
@@ -25,26 +25,3 @@ export const Route = createFileRoute('/dashboard')({
   },
   component: DashboardPage,
 });
-
-function DashboardPage() {
-  const navigate = useNavigate();
-  const { data: session } = authClient.useSession();
-  const user = session?.user;
-
-  return (
-    <main>
-      <h1>Dashboard</h1>
-      {user && <p>Signed in as {user.email}</p>}
-
-      <button
-        type="button"
-        onClick={async () => {
-          await authClient.signOut();
-          await navigate({ to: '/' });
-        }}
-      >
-        Sign out
-      </button>
-    </main>
-  );
-}

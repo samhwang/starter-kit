@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { IndexPage } from './index';
+import { HomePage } from '../home/pages';
 
 describe('Index Page', () => {
   it('should render Hi text', () => {
-    render(<IndexPage />);
+    render(<HomePage />);
     const hiText = screen.getByText(/Hi/i);
     expect(hiText).toBeInTheDocument();
   });
