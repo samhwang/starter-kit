@@ -2,8 +2,8 @@ import { useNavigate } from '@tanstack/react-router';
 import { useState } from 'react';
 import * as z from 'zod';
 
-import { authClient } from '../../auth/client';
-import { useAuthForm } from '../../auth/hooks/useAuthForm';
+import { authClient } from '../client';
+import { useAuthForm } from '../hooks/useAuthForm';
 
 const LoginSchema = z.object({
   email: z.email(),
