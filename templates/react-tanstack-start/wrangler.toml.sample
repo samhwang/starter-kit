@@ -2,6 +2,7 @@
 # Copy this to wrangler.toml and update to fit your project.
 # Requires DEPLOYMENT_ENV=cloudflare at build time (see .env.sample).
 
+"$schema" = "./node_modules/wrangler/config-schema.json"
 name = "react-tanstack-start"
 main = "dist/server/index.mjs"
 compatibility_date = "2026-08-04"
