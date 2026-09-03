@@ -44,6 +44,6 @@ export default defineConfig({
           setupFiles: ['./test/per-file-db.ts'],
         },
       },
-    ]
+    ],
   },
 });

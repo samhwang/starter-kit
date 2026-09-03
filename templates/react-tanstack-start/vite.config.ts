@@ -34,5 +34,5 @@ function getDeploymentPlugins(): PluginOption[] {
 }
 
 export default defineConfig({
-  plugins: [devtools(), tanstackStart(), ...getDeploymentPlugins(), viteReact()],
+  plugins: [devtools(), tanstackStart(), ...getDeploymentPlugins(), viteReact({ compiler: true })],
 });
