@@ -34,6 +34,7 @@
     "ci": "pnpm run lint && pnpm run typecheck && pnpm run test"
   },
   "devDependencies": {
+    "@oxc-node/cli": "^0.1.0",
     "@oxc-node/core": "^0.1.0",
     "@types/node": "^26.3.0",
     "@vitest/coverage-v8": "^4.1.11",

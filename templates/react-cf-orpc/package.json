@@ -52,6 +52,8 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.54.0",
+    "@oxc-node/cli": "^0.1.0",
+    "@oxc-node/core": "^0.1.0",
     "@tanstack/devtools-vite": "^0.8.5",
     "@tanstack/react-form-devtools": "^0.2.34",
     "@tanstack/router-cli": "^1.167.33",
