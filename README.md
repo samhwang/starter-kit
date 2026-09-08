@@ -10,6 +10,6 @@ You can view them under the [`templates`](./templates) folders.
 | Vite SPA              | [`templates/react-spa`](./templates/react-spa)                       | Vite React SPA - without a backend          |
 | TS App                | [`templates/ts-app`](./templates/ts-app)                             | TS App, Command lines, server,...           |
 | TS Lib                | [`templates/ts-lib`](./templates/ts-lib)                             | TS Library for publishing                   |
-| Advent of Code - Node | [`templates/aoc-node`](./templates/aoc-node)                         | Advent of Code with Node                    |
+| Advent of Code - Node | [`templates/ts-node-aoc`](./templates/ts-node-aoc)                   | Advent of Code with Node                    |
 
 To scaffold a template, use `npx degit samhwang/starter-kit/templates/<template-name> <project-name>`.

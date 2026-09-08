@@ -3,7 +3,7 @@
 ## Using this template
 
 ```shell
-npx degit samhwang/starter-kit/templates/aoc-node
+npx degit samhwang/starter-kit/templates/ts-node-aoc
 ```
 
 ## Grabbing the session key
