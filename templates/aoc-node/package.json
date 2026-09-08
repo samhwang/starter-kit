@@ -1,0 +1,37 @@
+{
+  "name": "aoc",
+  "version": "1.0.0",
+  "description": "Advent of Code Template",
+  "type": "module",
+  "scripts": {
+    "get-aoc-input": "dotenvx run -- oxnode bin/index.ts",
+    "typecheck": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint:fix": "oxlint --fix . && oxfmt --write .",
+    "lint:fix:unsafe": "oxlint --fix-dangerously . && oxfmt --write ."
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^2.23.0",
+    "commander": "^15.0.0",
+    "wretch": "^3.0.9"
+  },
+  "devDependencies": {
+    "@oxc-node/cli": "^0.1.0",
+    "@oxc-node/core": "^0.1.0",
+    "@types/node": "^26.3.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": "^24.0.0",
+    "pnpm": "^11.0.0"
+  },
+  "packageManager": "pnpm@11.24.0"
+}

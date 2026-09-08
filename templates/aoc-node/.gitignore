@@ -1,0 +1,16 @@
+node_modules
+
+.DS_Store
+*.local
+
+# Test Coverage
+coverage
+
+# Build output
+dist
+
+# Task input
+tasks/**/input.txt
+
+# env files
+.env
