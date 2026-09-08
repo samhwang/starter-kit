@@ -10,8 +10,8 @@ function getAocClient(session: string) {
 }
 
 interface FetchRequestPayload {
-  year: string;
-  day: string;
+  year: number;
+  day: number;
   session: string;
 }
 

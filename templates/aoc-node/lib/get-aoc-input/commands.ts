@@ -23,7 +23,7 @@ export const CommandInputPayload = z.object({
     .refine((v) => v.length > 0, {
       error: 'Invalid session key. Must be longer than 1 character.',
     }),
-  year: z.string().default(new Date().getFullYear().toString()),
+  year: z.coerce.number().default(new Date().getFullYear()),
   output: z.string().optional(),
 });
 type CommandInputPayload = z.infer<typeof CommandInputPayload>;

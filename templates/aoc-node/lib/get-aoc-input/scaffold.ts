@@ -11,8 +11,8 @@ export function writeAOCTaskinput({ data, outputDir }: WriteTaskInputPayload): v
 }
 
 interface ScaffoldTemplatePayload {
-  year: string;
-  day: string;
+  year: number;
+  day: number;
   outputDir: string;
   title: string;
 }
