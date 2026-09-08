@@ -18,11 +18,12 @@ To use the scaffolding script below, you'd need to first grab the session key. D
 
 ## Scaffolding
 
-- This command will fetch the input and scaffold the folder with prefilled templates.
-  ```shell
-  pnpm run get-aoc-input -d <day>
-  ```
-- The command also takes these additional options:
-  - `-y`/`--year` if you want to get the input for a particular year. Otherwise, it defaults to the current year, in your local system time.
-  - `-s`/`--session` to manually override the session key with the value above. Otherwise, it will read from your local `.env` file.
-  - `-o`/`--output` to set the output directory. Otherwise, it defaults to `tasks/day${day}` in your current working directory.
+```shell
+pnpm run get-aoc-input -d <day>
+```
+
+Additional flags:
+
+- `-y`/`--year`: Year (default: current year).
+- `-s`/`--session`: Override session key (default: reads `.env` via `SESSION_KEY`).
+- `-o`/`--output`: Output directory (default: `./tasks/dayN`).
