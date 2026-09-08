@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^2.23.0",
-    "commander": "^15.0.0",
-    "wretch": "^3.0.9"
+    "wretch": "^3.0.9",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@oxc-node/cli": "^0.1.0",

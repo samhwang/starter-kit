@@ -1,22 +1,6 @@
 import wretch from 'wretch';
 
-function verifySessionKey(session?: string): boolean {
-  if (!session) {
-    return false;
-  }
-
-  if (session.length === 0) {
-    return false;
-  }
-
-  return true;
-}
-
 function getAocClient(session: string) {
-  if (!verifySessionKey(session)) {
-    throw new Error('ERROR: Invalid session key.');
-  }
-
   return wretch('https://adventofcode.com')
     .options({ credentials: 'same-origin' })
     .headers({

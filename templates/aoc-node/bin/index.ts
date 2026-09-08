@@ -1,28 +1,24 @@
 #!/usr/bin/env node
-import { Command } from 'commander';
+import process from 'node:process';
+import util from 'node:util';
 
-import { CommandInputPayload, fetchCommand, scaffoldCommand } from '../lib/get-aoc-input/commands';
+import { z } from 'zod';
 
-const program = new Command();
+import { CommandInputPayload, scaffoldCommand } from '../lib/get-aoc-input/commands';
 
-program.name('get-aoc-input').description('CLI for fetching and scaffolding AOC inputs').version('1.0.0');
+const { values } = util.parseArgs({
+  options: {
+    day: { type: 'string', short: 'd' },
+    year: { type: 'string', short: 'y' },
+    session: { type: 'string', short: 's' },
+    output: { type: 'string', short: 'o' },
+  },
+});
 
-program
-  .command('fetch')
-  .description('Fetch an AOC input for the day')
-  .requiredOption('-d, --day <day>', 'The day to scaffold')
-  .option('-y, --year <year>', 'The year to scaffold', new Date().getFullYear().toString())
-  .option('-s, --session <session>', 'The session cookie to use', process.env.SESSION_KEY)
-  .option('-o, --output <output>', 'The output directory to use (default is the day from dayOption `day3`, `day4`...)')
-  .action((input: CommandInputPayload) => fetchCommand(input));
+const args = CommandInputPayload.safeParse(values);
+if (!args.success) {
+  console.error(z.prettifyError(args.error));
+  process.exit(1);
+}
 
-program
-  .command('scaffold')
-  .description('Scaffold an AOC input for the day')
-  .requiredOption('-d, --day <day>', 'The day to scaffold')
-  .option('-y, --year <year>', 'The year to scaffold')
-  .option('-s, --session <session>', 'The session cookie to use', process.env.SESSION_KEY)
-  .option('-o, --output <output>', 'The output directory to use (default is the day from dayOption `day3`, `day4`...)')
-  .action((input: CommandInputPayload) => scaffoldCommand(input));
-
-program.parse(process.argv);
+void scaffoldCommand(args.data);
