@@ -1,0 +1,12 @@
+.DS_Store
+*.local
+
+# Task input
+tasks/**/input.txt
+
+# env files
+.env
+
+# Binaries
+bin/
+/aoc
