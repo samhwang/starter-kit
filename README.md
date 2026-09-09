@@ -11,5 +11,6 @@ You can view them under the [`templates`](./templates) folders.
 | TS App                | [`templates/ts-app`](./templates/ts-app)                             | TS App, Command lines, server,...           |
 | TS Lib                | [`templates/ts-lib`](./templates/ts-lib)                             | TS Library for publishing                   |
 | Advent of Code - Node | [`templates/ts-node-aoc`](./templates/ts-node-aoc)                   | Advent of Code with Node                    |
+| Advent of Code - Bun  | [`templates/ts-bun-aoc`](./templates/ts-bun-aoc)                     | Advent of Code with Bun                     |
 
 To scaffold a template, use `npx degit samhwang/starter-kit/templates/<template-name> <project-name>`.

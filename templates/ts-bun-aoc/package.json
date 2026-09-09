@@ -1,0 +1,29 @@
+{
+  "name": "ts-bun-aoc",
+  "version": "1.0.0",
+  "description": "Advent of Code - Bun template",
+  "type": "module",
+  "scripts": {
+    "get-aoc-input": "bun bin/index.ts",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "typecheck": "bunx tsc",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint:fix": "oxlint --fix . && oxfmt --write .",
+    "lint:fix:unsafe": "oxlint --fix-dangerously . && oxfmt --write ."
+  },
+  "dependencies": {
+    "wretch": "^3.0.9",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@oxc-node/cli": "^0.1.0",
+    "@oxc-node/core": "^0.1.0",
+    "@types/bun": "^1.2.0",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "typescript": "^7.0.2"
+  }
+}
