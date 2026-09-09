@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import process from 'node:process';
 import util from 'node:util';
 
 import { z } from 'zod';
