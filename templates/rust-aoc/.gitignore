@@ -1,0 +1,5 @@
+target/
+.env
+*.local
+src/bin/
+tasks/**/input.txt
