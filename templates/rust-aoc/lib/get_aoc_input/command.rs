@@ -36,5 +36,10 @@ pub fn scaffold_day(day: u32, year: u32, session: &str, output: &str) {
         process::exit(0);
     }
 
+    if let Err(e) = scaffold::register_bin(day) {
+        eprintln!("ERROR REGISTERING BINARY: {e}");
+        process::exit(0);
+    }
+
     eprintln!("AOC INPUT FOR YEAR {year} DAY {day} SCAFFOLDED SUCCESSFULLY!");
 }
