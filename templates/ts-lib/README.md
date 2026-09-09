@@ -13,7 +13,6 @@ pnpm install
 - [TypeScript](https://www.typescriptlang.org/) - The core of this template.
 - [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) for code linting, and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) for code formatting
 - [Vitest](https://vitest.dev/) for running unit tests.
-- [oxnode](https://oxc.rs) for running the script locally.
 - [tsdown](https://tsdown.dev/) for bundling the project.
 
 ## Project Structure

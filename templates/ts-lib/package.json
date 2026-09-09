@@ -2,6 +2,7 @@
   "name": "ts-lib",
   "version": "1.0.0",
   "description": "TypeScript Library Starter Template",
+  "license": "MIT",
   "homepage": "https://github.com/samhwang/PLACEHOLDER#readme",
   "bugs": "https://github.com/samhwang/PLACEHOLDER/issues",
   "repository": {
@@ -10,6 +11,7 @@
   },
   "type": "module",
   "sideEffects": false,
+  "files": ["dist"],
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -21,7 +23,6 @@
   },
   "scripts": {
     "prepare": "husky",
-    "start": "oxnode bin/index.ts",
     "build": "tsdown",
     "prepublishOnly": "pnpm run build",
     "typecheck": "tsc",
@@ -34,8 +35,6 @@
     "ci": "pnpm run lint && pnpm run typecheck && pnpm run test"
   },
   "devDependencies": {
-    "@oxc-node/cli": "^0.1.0",
-    "@oxc-node/core": "^0.1.0",
     "@types/node": "^26.3.0",
     "@vitest/coverage-v8": "^4.1.11",
     "husky": "^9.1.7",
