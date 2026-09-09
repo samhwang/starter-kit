@@ -20,7 +20,7 @@ export const CommandInputPayload = z.object({
     .string()
     .default(process.env.SESSION_KEY ?? '')
     .refine((v) => v.length > 0, {
-      error: 'Invalid session key. Must be longer than 1 character.',
+      error: 'Invalid session key. Must be at least 1 character.',
     }),
   year: z.coerce.number().default(new Date().getFullYear()),
   output: z.string().optional(),
