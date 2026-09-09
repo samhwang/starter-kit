@@ -5,7 +5,7 @@ function getClient(session: string) {
     .options({ credentials: 'same-origin' })
     .headers({
       Cookie: `session=${session}`,
-      'User-Agent': 'https://github.com/samhwang/aoc-template by samhwang2112.dev@gmail.com',
+      'User-Agent': 'https://github.com/samhwang/aoc by samhwang2112.dev@gmail.com',
     });
 }
 
