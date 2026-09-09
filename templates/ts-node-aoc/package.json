@@ -4,7 +4,7 @@
   "description": "Advent of Code Template",
   "type": "module",
   "scripts": {
-    "get-aoc-input": "dotenvx run -- oxnode bin/index.ts",
+    "get-aoc-input": "oxnode --env-file-if-exists .env bin/index.ts",
     "typecheck": "tsc",
     "test": "vitest run",
     "test:watch": "vitest watch",
@@ -14,7 +14,6 @@
     "lint:fix:unsafe": "oxlint --fix-dangerously . && oxfmt --write ."
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^2.23.0",
     "wretch": "^3.0.9",
     "zod": "^4.5.4"
   },
