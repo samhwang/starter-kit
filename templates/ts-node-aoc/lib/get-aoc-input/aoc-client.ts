@@ -1,6 +1,6 @@
 import wretch from 'wretch';
 
-function getAocClient(session: string) {
+function getClient(session: string) {
   return wretch('https://adventofcode.com')
     .options({ credentials: 'same-origin' })
     .headers({
@@ -15,12 +15,12 @@ interface FetchRequestPayload {
   session: string;
 }
 
-export async function downloadAOCInput({ year, day, session }: FetchRequestPayload): Promise<string> {
-  return getAocClient(session).url(`/${year}/day/${day}/input`).get().text();
+export async function downloadInput({ year, day, session }: FetchRequestPayload): Promise<string> {
+  return getClient(session).url(`/${year}/day/${day}/input`).get().text();
 }
 
 export async function fetchTitle({ year, day, session }: FetchRequestPayload): Promise<string> {
-  const document = await getAocClient(session).url(`/${year}/day/${day}`).get().text();
+  const document = await getClient(session).url(`/${year}/day/${day}`).get().text();
 
   const titleRegex = /(---) (Day) (\d+): (.+) (---)/g;
   const fullTitle = document.match(titleRegex);

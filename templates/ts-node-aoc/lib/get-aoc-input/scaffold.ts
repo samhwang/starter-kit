@@ -5,7 +5,7 @@ interface WriteTaskInputPayload {
   data: string;
   outputDir: string;
 }
-export function writeAOCTaskinput({ data, outputDir }: WriteTaskInputPayload): void {
+export function writeTaskInput({ data, outputDir }: WriteTaskInputPayload): void {
   const taskInputPath = path.join(outputDir, 'input.txt');
   return fs.writeFileSync(taskInputPath, data);
 }
@@ -16,7 +16,7 @@ interface ScaffoldTemplatePayload {
   outputDir: string;
   title: string;
 }
-export function scaffoldAOCTemplate({ year, day, outputDir, title }: ScaffoldTemplatePayload): void {
+export function scaffoldTemplate({ year, day, outputDir, title }: ScaffoldTemplatePayload): void {
   const README_TEMPLATE = `[${title}](https://adventofcode.com/${year}/day/${day} "${title}")
 
 \`\`\`shell

@@ -3,8 +3,8 @@ import path from 'node:path';
 
 import { z } from 'zod';
 
-import { downloadAOCInput, fetchTitle } from './aoc-client';
-import { scaffoldAOCTemplate, writeAOCTaskinput } from './scaffold';
+import { downloadInput, fetchTitle } from './aoc-client';
+import { scaffoldTemplate, writeTaskInput } from './scaffold';
 
 const START_OF_MONTH = 1;
 const END_OF_MONTH = 25; // Historically, AOC only lasts for 25 days.
@@ -33,11 +33,11 @@ export async function scaffoldCommand({ year, day, session, output }: CommandInp
     const outputDir = output ?? path.join(process.cwd(), 'tasks', `day${day}`);
     fs.mkdirSync(outputDir, { recursive: true });
 
-    const taskInput = await downloadAOCInput({ year, day, session });
-    writeAOCTaskinput({ data: taskInput, outputDir });
+    const taskInput = await downloadInput({ year, day, session });
+    writeTaskInput({ data: taskInput, outputDir });
 
     const title = await fetchTitle({ year, day, session });
-    scaffoldAOCTemplate({ year, day, outputDir, title });
+    scaffoldTemplate({ year, day, outputDir, title });
     console.log(`AOC INPUT FOR YEAR ${year} DAY ${day} SCAFFOLDED SUCCESSFULLY!`);
   } catch (error) {
     console.error('ERROR SCAFFOLDING AOC INPUT: ', error);
