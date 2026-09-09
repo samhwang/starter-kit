@@ -1,9 +1,11 @@
-# TS Starter Template
+# TS Lib Template
 
-## Using this template
+## Quick start
 
 ```shell
-npx degit samhwang/starter-kit/templates/ts-lib
+npx degit samhwang/starter-kit/templates/ts-lib <your-repo>
+cd <your-repo>
+pnpm install
 ```
 
 ## Batteries included
@@ -14,11 +16,10 @@ npx degit samhwang/starter-kit/templates/ts-lib
 - [oxnode](https://oxc.rs) for running the script locally.
 - [tsdown](https://tsdown.dev/) for bundling the project.
 
-## Available scripts
+## Project Structure
 
-```shell
-pnpm run start
-pnpm run test
-pnpm run format
-pnpm run build
+```
+└── src/
+    ├── index.ts       # Public entry point (exported from package.json)
+    └── index.test.ts  # Unit tests
 ```

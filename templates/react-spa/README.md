@@ -1,9 +1,12 @@
-# Getting Started with Vite - React starter template
+# React - Vite SPA Template
 
-## Using this template
+## Quick start
 
 ```shell
-npx degit samhwang/starter-kit/templates/react-spa
+npx degit samhwang/starter-kit/templates/react-spa <your-repo>
+cd <your-repo>
+pnpm install
+pnpm run dev
 ```
 
 ## Batteries included
@@ -17,29 +20,18 @@ npx degit samhwang/starter-kit/templates/react-spa
 
 ### Dev tools:
 
-- [pnpm](https://pnpm.io) - Fast, disk space efficient package manager.
 - [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) for code linting, and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) for code formatting
 - [Vite](https://vitejs.dev/) - The blazing fast frontend build tool.
 - [Vitest](https://vitest.dev/) for running unit tests with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/),
   using [msw](https://mswjs.io/) to fake a service worker request to intercept API calls during testing.
 
-## Available Scripts
+## Project Structure
 
-```shell
-pnpm run dev
-pnpm run test
-pnpm run format
-pnpm run build
 ```
-
-## Deployment
-
-This template is assumed to be hosting provider agnostic. Please read the [Vite documentation on how to deploy your app](https://vitejs.dev/guide/static-deploy).
-
-## Learn More
-
-You can learn more in the [Vite documentation](https://vitejs.dev/guide/).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-To learn React testing, go to [RTL docs](https://testing-library.com/docs/react-testing-library/intro/)
+├── src/
+│   ├── home/       # Home feature pages
+│   ├── routes/     # TanStack Router file-based routes
+│   ├── app.tsx     # Root app component
+│   └── router.tsx  # Router setup
+└── index.html
+```

@@ -1,9 +1,11 @@
-# TS Starter Template
+# TS App Template
 
-## Using this template
+## Quick start
 
 ```shell
-npx degit samhwang/starter-kit/templates/ts-app
+npx degit samhwang/starter-kit/templates/ts-app <your-repo>
+cd <your-repo>
+pnpm install
 ```
 
 ## Batteries included
@@ -14,11 +16,12 @@ npx degit samhwang/starter-kit/templates/ts-app
 - [oxnode](https://oxc.rs) for running the script locally.
 - [tsdown](https://tsdown.dev/) for bundling the project.
 
-## Available scripts
+## Project Structure
 
-```shell
-pnpm run start
-pnpm run test
-pnpm run format
-pnpm run build
+```
+├── bin/
+│   └── index.ts       # CLI entry point (run via `pnpm start`, built by tsdown)
+└── src/
+    ├── index.ts       # Implementation, imported by bin/index.ts
+    └── index.test.ts  # Unit tests
 ```

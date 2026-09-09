@@ -1,9 +1,11 @@
 # Advent of Code - Node template
 
-## Using this template
+## Quick start
 
 ```shell
-npx degit samhwang/starter-kit/templates/ts-node-aoc
+npx degit samhwang/starter-kit/templates/ts-node-aoc <your-repo>
+cd <your-repo>
+pnpm install
 ```
 
 ## Grabbing the session key
@@ -27,3 +29,14 @@ Additional flags:
 - `-y`/`--year`: Year (default: current year).
 - `-s`/`--session`: Override session key (default: reads `.env` via `SESSION_KEY`).
 - `-o`/`--output`: Output directory (default: `./tasks/dayN`).
+
+## Project Structure
+
+```
+├── bin/
+│   └── index.ts              # CLI entry point (get-aoc-input)
+├── lib/
+│   ├── get-aoc-input/        # AoC client, scaffolding command, CLI parsing
+│   └── parse-input/          # Puzzle input parsing helpers
+└── tasks/                    # Scaffolded day1, day2, ... solutions
+```
