@@ -13,17 +13,17 @@ const (
 	userAgent = "https://github.com/samhwang/aoc by samhwang2112.dev@gmail.com"
 )
 
-type FetchRequestPayload struct {
+type FetchRequestInput struct {
 	Year    int
 	Day     int
 	Session string
 }
 
-func DownloadInput(p FetchRequestPayload) (string, error) {
+func DownloadInput(p FetchRequestInput) (string, error) {
 	return get(fmt.Sprintf("%s/%d/day/%d/input", baseURL, p.Year, p.Day), p.Session)
 }
 
-func FetchTitle(p FetchRequestPayload) (string, error) {
+func FetchTitle(p FetchRequestInput) (string, error) {
 	doc, err := get(fmt.Sprintf("%s/%d/day/%d", baseURL, p.Year, p.Day), p.Session)
 	if err != nil {
 		return "", err

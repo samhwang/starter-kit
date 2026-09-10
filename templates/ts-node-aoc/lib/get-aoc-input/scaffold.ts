@@ -1,22 +1,22 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-interface WriteTaskInputPayload {
+interface WriteTaskInput {
   data: string;
   outputDir: string;
 }
-export function writeTaskInput({ data, outputDir }: WriteTaskInputPayload): void {
+export function writeTask({ data, outputDir }: WriteTaskInput): void {
   const taskInputPath = path.join(outputDir, 'input.txt');
   return fs.writeFileSync(taskInputPath, data);
 }
 
-interface ScaffoldTemplatePayload {
+interface WriteTemplateInput {
   year: number;
   day: number;
   outputDir: string;
   title: string;
 }
-export function scaffoldTemplate({ year, day, outputDir, title }: ScaffoldTemplatePayload): void {
+export function writeTemplate({ year, day, outputDir, title }: WriteTemplateInput): void {
   const README_TEMPLATE = `[${title}](https://adventofcode.com/${year}/day/${day} "${title}")
 
 \`\`\`shell

@@ -73,5 +73,10 @@ fn main() {
         process::exit(1);
     }
 
-    command::scaffold_day(input.day, input.year, &input.session, &input.output);
+    command::scaffold(command::CLIInput {
+        day: input.day,
+        year: input.year,
+        session: input.session,
+        output: input.output,
+    });
 }

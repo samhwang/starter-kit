@@ -65,5 +65,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	aocinput.Scaffold(args.Output, args.Year, args.Day, args.Session)
+	aocinput.Scaffold(aocinput.CLIInput{
+		Output:  args.Output,
+		Year:    args.Year,
+		Day:     args.Day,
+		Session: args.Session,
+	})
 }

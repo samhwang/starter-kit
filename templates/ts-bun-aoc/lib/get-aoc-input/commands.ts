@@ -3,12 +3,12 @@ import path from 'node:path';
 import { z } from 'zod';
 
 import { downloadInput, fetchTitle } from './aoc-client';
-import { scaffoldTemplate, writeTaskInput } from './scaffold';
+import { writeTemplate, writeTask } from './scaffold';
 
 const START_OF_MONTH = 1;
 const END_OF_MONTH = 25; // Historically, AOC only lasts for 25 days.
 
-export const CommandInputPayload = z.object({
+export const CLIInput = z.object({
   day: z.coerce
     .number({
       error: `Invalid day. Must be a number between ${START_OF_MONTH} and ${END_OF_MONTH}.`,
@@ -24,18 +24,18 @@ export const CommandInputPayload = z.object({
   year: z.coerce.number().default(new Date().getFullYear()),
   output: z.string().optional(),
 });
-type CommandInputPayload = z.infer<typeof CommandInputPayload>;
+export type CLIInput = z.infer<typeof CLIInput>;
 
-export async function scaffoldCommand({ year, day, session, output }: CommandInputPayload): Promise<void> {
+export async function scaffold({ year, day, session, output }: CLIInput): Promise<void> {
   try {
     console.log(`SCAFFOLDING AOC INPUT FOR YEAR ${year} DAY ${day}...`);
     const outputDir = output ?? path.join(process.cwd(), 'tasks', `day${day}`);
 
     const taskInput = await downloadInput({ year, day, session });
-    await writeTaskInput({ data: taskInput, outputDir });
+    await writeTask({ data: taskInput, outputDir });
 
     const title = await fetchTitle({ year, day, session });
-    await scaffoldTemplate({ year, day, outputDir, title });
+    await writeTemplate({ year, day, outputDir, title });
     console.log(`AOC INPUT FOR YEAR ${year} DAY ${day} SCAFFOLDED SUCCESSFULLY!`);
   } catch (error) {
     console.error('ERROR SCAFFOLDING AOC INPUT: ', error);

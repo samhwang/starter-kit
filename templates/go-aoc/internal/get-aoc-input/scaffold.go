@@ -46,13 +46,25 @@ func main() {
 ` + "```\n"
 )
 
-func WriteTaskInput(outputDir, data string) error {
-	return os.WriteFile(filepath.Join(outputDir, "input.txt"), []byte(data), 0o644)
+type WriteTaskInput struct {
+	OutputDir string
+	Data      string
 }
 
-func WriteTemplate(outputDir string, year, day int, title string) error {
-	if err := os.WriteFile(filepath.Join(outputDir, "README.md"), fmt.Appendf(nil, readmeGo, year, title, day), 0o644); err != nil {
+func WriteTask(in WriteTaskInput) error {
+	return os.WriteFile(filepath.Join(in.OutputDir, "input.txt"), []byte(in.Data), 0o644)
+}
+
+type WriteTemplateInput struct {
+	OutputDir string
+	Year      int
+	Day       int
+	Title     string
+}
+
+func WriteTemplate(in WriteTemplateInput) error {
+	if err := os.WriteFile(filepath.Join(in.OutputDir, "README.md"), fmt.Appendf(nil, readmeGo, in.Year, in.Title, in.Day), 0o644); err != nil {
 		return err
 	}
-	return os.WriteFile(filepath.Join(outputDir, taskFile), []byte(taskGo), 0o644)
+	return os.WriteFile(filepath.Join(in.OutputDir, taskFile), []byte(taskGo), 0o644)
 }

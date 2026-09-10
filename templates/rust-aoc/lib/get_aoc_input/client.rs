@@ -3,13 +3,13 @@ use regex::Regex;
 const USER_AGENT: &str = "https://github.com/samhwang/aoc by samhwang2112.dev@gmail.com";
 
 #[derive(Clone, Copy)]
-pub struct FetchRequestPayload<'a> {
+pub struct FetchRequestInput<'a> {
     pub year: u32,
     pub day: u32,
     pub session: &'a str,
 }
 
-pub fn download_input(p: FetchRequestPayload) -> Result<String, Box<dyn std::error::Error>> {
+pub fn download_input(p: FetchRequestInput) -> Result<String, Box<dyn std::error::Error>> {
     let url = format!("https://adventofcode.com/{}/day/{}/input", p.year, p.day);
     let body: String = ureq::get(&url)
         .header("Cookie", format!("session={}", p.session))
@@ -20,7 +20,7 @@ pub fn download_input(p: FetchRequestPayload) -> Result<String, Box<dyn std::err
     Ok(body)
 }
 
-pub fn fetch_title(p: FetchRequestPayload) -> String {
+pub fn fetch_title(p: FetchRequestInput) -> String {
     let url = format!("https://adventofcode.com/{}/day/{}", p.year, p.day);
     let Ok(body) = ureq::get(&url)
         .header("Cookie", format!("session={}", p.session))

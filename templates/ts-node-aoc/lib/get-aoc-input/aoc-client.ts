@@ -9,17 +9,17 @@ function getClient(session: string) {
     });
 }
 
-interface FetchRequestPayload {
+interface FetchRequestInput {
   year: number;
   day: number;
   session: string;
 }
 
-export async function downloadInput({ year, day, session }: FetchRequestPayload): Promise<string> {
+export async function downloadInput({ year, day, session }: FetchRequestInput): Promise<string> {
   return getClient(session).url(`/${year}/day/${day}/input`).get().text();
 }
 
-export async function fetchTitle({ year, day, session }: FetchRequestPayload): Promise<string> {
+export async function fetchTitle({ year, day, session }: FetchRequestInput): Promise<string> {
   const document = await getClient(session).url(`/${year}/day/${day}`).get().text();
 
   const titleRegex = /(---) (Day) (\d+): (.+) (---)/g;

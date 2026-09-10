@@ -1,6 +1,5 @@
 use std::fs;
 
-#[allow(dead_code)]
 pub fn lines(path: &str) -> Vec<String> {
     let content = fs::read_to_string(path).unwrap_or_default();
     let trimmed = content.trim();

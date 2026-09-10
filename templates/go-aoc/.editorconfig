@@ -1,9 +1,14 @@
 root = true
 
 [*]
-indent_style = space
-indent_size = 2
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
+
+# gofmt is the one true Go standard: tabs, no enforced line length.
+[*.go]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+max_line_length = off

@@ -1,21 +1,21 @@
 import path from 'node:path';
 
-interface WriteTaskInputPayload {
+interface WriteTaskInput {
   data: string;
   outputDir: string;
 }
-export async function writeTaskInput({ data, outputDir }: WriteTaskInputPayload): Promise<void> {
+export async function writeTask({ data, outputDir }: WriteTaskInput): Promise<void> {
   const taskInputPath = path.join(outputDir, 'input.txt');
   await Bun.write(taskInputPath, data);
 }
 
-interface ScaffoldTemplatePayload {
+interface WriteTemplateInput {
   year: number;
   day: number;
   outputDir: string;
   title: string;
 }
-export async function scaffoldTemplate({ year, day, outputDir, title }: ScaffoldTemplatePayload): Promise<void> {
+export async function writeTemplate({ year, day, outputDir, title }: WriteTemplateInput): Promise<void> {
   const README_TEMPLATE = `[${title}](https://adventofcode.com/${year}/day/${day} "${title}")
 
 \`\`\`shell
