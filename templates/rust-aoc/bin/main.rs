@@ -1,37 +1,12 @@
-use std::collections::HashMap;
 use std::env;
 use std::process;
 
 use garde::Validate;
 
-use aoc_cli::get_aoc_input::command;
+use aoc_cli::get_aoc_input::command::{scaffold, validation_messages, CliInput};
 
 fn current_year() -> u32 {
     time::OffsetDateTime::now_utc().year() as u32
-}
-
-// Bounds live as tags on the struct so garde checks them together, rather
-// than a scattered if per field.
-#[derive(Validate)]
-struct CliInput {
-    #[garde(range(min = 1, max = 25))]
-    day: u32,
-    #[garde(length(min = 2))]
-    session: String,
-    #[garde(skip)]
-    year: u32,
-    #[garde(skip)]
-    output: String,
-}
-
-fn validation_messages() -> HashMap<&'static str, &'static str> {
-    HashMap::from([
-        ("day", "Invalid day. Must be a number between 1 and 25."),
-        (
-            "session",
-            "Invalid session key. Must be longer than 1 character.",
-        ),
-    ])
 }
 
 fn main() {
@@ -73,7 +48,7 @@ fn main() {
         process::exit(1);
     }
 
-    command::scaffold(command::CLIInput {
+    scaffold(CliInput {
         day: input.day,
         year: input.year,
         session: input.session,
