@@ -10,7 +10,7 @@ tasks:
     cmds:
       - gofmt -w .
 
-  typecheck:
+  build:
     cmds:
       - go build ./...
 

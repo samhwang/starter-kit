@@ -1,12 +1,15 @@
 import wretch from 'wretch';
 
-function getClient(session: string) {
+function get(url: string, session: string) {
   return wretch('https://adventofcode.com')
     .options({ credentials: 'same-origin' })
     .headers({
       Cookie: `session=${session}`,
       'User-Agent': 'https://github.com/samhwang/aoc by samhwang2112.dev@gmail.com',
-    });
+    })
+    .url(url)
+    .get()
+    .text();
 }
 
 interface FetchRequestInput {
@@ -16,11 +19,11 @@ interface FetchRequestInput {
 }
 
 export async function downloadInput({ year, day, session }: FetchRequestInput): Promise<string> {
-  return getClient(session).url(`/${year}/day/${day}/input`).get().text();
+  return get(session, `/${year}/day/${day}/input`);
 }
 
 export async function fetchTitle({ year, day, session }: FetchRequestInput): Promise<string> {
-  const document = await getClient(session).url(`/${year}/day/${day}`).get().text();
+  const document = await get(session, `/${year}/day/${day}`);
 
   const titleRegex = /(---) (Day) (\d+): (.+) (---)/g;
   const fullTitle = document.match(titleRegex);

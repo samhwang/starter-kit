@@ -3,6 +3,8 @@ package aocinput
 import (
 	"fmt"
 	"os"
+
+	"github.com/go-playground/validator/v10"
 )
 
 const errorPref = "ERROR SCAFFOLDING AOC INPUT: "
@@ -10,8 +12,23 @@ const errorPref = "ERROR SCAFFOLDING AOC INPUT: "
 type CLIInput struct {
 	Output  string
 	Year    int
-	Day     int
-	Session string
+	Day     int    `validate:"gte=1,lte=25"`
+	Session string `validate:"gt=1"`
+}
+
+var validationMessages = map[string]string{
+	"Day":     "Invalid day. Must be a number between 1 and 25.",
+	"Session": "Invalid session key. Must be longer than 1 character.",
+}
+
+func ValidateArgs(args CLIInput) error {
+	validationErr := validator.New().Struct(args)
+	if validationErr != nil {
+		for _, fe := range validationErr.(validator.ValidationErrors) {
+			fmt.Fprintln(os.Stderr, validationMessages[fe.Field()])
+		}
+	}
+	return validationErr
 }
 
 // Scaffold downloads the day's input and writes the task skeleton. Errors

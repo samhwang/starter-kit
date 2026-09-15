@@ -2,7 +2,7 @@ import path from 'node:path';
 
 import { z } from 'zod';
 
-import { downloadInput, fetchTitle } from './aoc-client';
+import { downloadInput, fetchTitle } from './client';
 import { writeTemplate, writeTask } from './scaffold';
 
 const START_OF_MONTH = 1;

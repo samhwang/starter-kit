@@ -13,6 +13,25 @@ const (
 	userAgent = "https://github.com/samhwang/aoc by samhwang2112.dev@gmail.com"
 )
 
+func get(url, session string) (string, error) {
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return "", err
+	}
+	req.Header.Set("Cookie", "session="+session)
+	req.Header.Set("User-Agent", userAgent)
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return "", err
+	}
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", err
+	}
+	return string(body), nil
+}
+
 type FetchRequestInput struct {
 	Year    int
 	Day     int
@@ -34,23 +53,4 @@ func FetchTitle(p FetchRequestInput) (string, error) {
 		return fmt.Sprintf("Day %d: unknown title", p.Day), nil
 	}
 	return strings.TrimSpace(strings.Trim(m, "-")), nil
-}
-
-func get(url, session string) (string, error) {
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		return "", err
-	}
-	req.Header.Set("Cookie", "session="+session)
-	req.Header.Set("User-Agent", userAgent)
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		return "", err
-	}
-	defer resp.Body.Close()
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return "", err
-	}
-	return string(body), nil
 }

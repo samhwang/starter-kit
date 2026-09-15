@@ -7,24 +7,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/go-playground/validator/v10"
-
 	aocinput "aoc/internal/get-aoc-input"
 )
-
-// cliInput holds parsed flag values so validator can check them together,
-// rather than a scattered if per flag.
-type cliInput struct {
-	Day     int    `validate:"gte=1,lte=25"`
-	Session string `validate:"gt=1"`
-	Output  string
-	Year    int
-}
-
-var validationMessages = map[string]string{
-	"Day":     "Invalid day. Must be a number between 1 and 25.",
-	"Session": "Invalid session key. Must be longer than 1 character.",
-}
 
 func main() {
 	var day, year int
@@ -50,25 +34,17 @@ func main() {
 		output = filepath.Join("tasks", fmt.Sprintf("day%d", day))
 	}
 
-	args := &cliInput{
+	args := aocinput.CLIInput{
 		Year:    year,
 		Day:     day,
 		Session: session,
 		Output:  output,
 	}
 
-	validationErr := validator.New().Struct(args)
+	validationErr := aocinput.ValidateArgs(args)
 	if validationErr != nil {
-		for _, fe := range validationErr.(validator.ValidationErrors) {
-			fmt.Fprintln(os.Stderr, validationMessages[fe.Field()])
-		}
 		os.Exit(1)
 	}
 
-	aocinput.Scaffold(aocinput.CLIInput{
-		Output:  args.Output,
-		Year:    args.Year,
-		Day:     args.Day,
-		Session: args.Session,
-	})
+	aocinput.Scaffold(args)
 }
