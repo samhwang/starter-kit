@@ -17,12 +17,12 @@ import (
 	"aoc/internal/parse-input"
 )
 
-func Part1(lines []string) int {
+func part1(lines []string) int {
 	// TODO: implement
 	return 0
 }
 
-func Part2(lines []string) int {
+func part2(lines []string) int {
 	// TODO: implement
 	return 0
 }
@@ -30,14 +30,22 @@ func Part2(lines []string) int {
 func main() {
 	start := time.Now()
 
+	parseStart := time.Now()
 	input, err := parse.Lines("./input.txt")
 	if err != nil {
 		panic(err)
 	}
+	fmt.Printf("parse-input: %s\n", time.Since(parseStart))
 
-	fmt.Println("PART 1: ", Part1(input))
-	fmt.Println("PART 2: ", Part2(input))
-	fmt.Printf("completed in %s\n", time.Since(start))
+	p1Start := time.Now()
+	fmt.Println("PART 1: ", part1(input))
+	fmt.Printf("part 1: %s\n", time.Since(p1Start))
+
+	p2Start := time.Now()
+	fmt.Println("PART 2: ", part2(input))
+	fmt.Printf("part 2: %s\n", time.Since(p2Start))
+
+	fmt.Printf("task: %s\n", time.Since(start))
 }
 `
 	readmeGo = `[%[2]s](https://adventofcode.com/%[1]d/day/%[3]d "%[2]s")

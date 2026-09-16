@@ -35,15 +35,25 @@ pub fn write_template(input: WriteTemplateInput) -> std::io::Result<()> {
          fn part2(_lines: &[String]) -> i32 {\n\
          \t0\n\
          }\n\n\
-         fn main() {\n\
-         \tlet start = Instant::now();\n\
-         \tlet lines = aoc_cli::parse_input::lines(\"./input.txt\");\n\
-         \tlet p1 = part1(&lines);\n\
-         \tprintln!(\"PART 1: {p1}\");\n\
-         \tlet p2 = part2(&lines);\n\
-         \tprintln!(\"PART 2: {p2}\");\n\
-         \tprintln!(\"Elapsed: {:?}\", start.elapsed());\n\
-         }\n";
+fn main() {\n\
+     \tlet start = Instant::now();\n\
+     \n\
+     \tlet parse_start = Instant::now();\n\
+     \tlet lines = aoc_cli::parse_input::lines(\"./input.txt\");\n\
+     \tprintln!(\"parse-input: {:?}\", parse_start.elapsed());\n\
+     \n\
+     \tlet p1_start = Instant::now();\n\
+     \tlet p1 = part1(&lines);\n\
+     \tprintln!(\"PART 1: {p1}\");\n\
+     \tprintln!(\"part 1: {:?}\", p1_start.elapsed());\n\
+     \n\
+     \tlet p2_start = Instant::now();\n\
+     \tlet p2 = part2(&lines);\n\
+     \tprintln!(\"PART 2: {p2}\");\n\
+     \tprintln!(\"part 2: {:?}\", p2_start.elapsed());\n\
+     \n\
+     \tprintln!(\"task: {:?}\", start.elapsed());\n\
+     }\n";
     fs::create_dir_all(format!("{output_dir}/src/bin"))?;
     fs::write(format!("{output_dir}/src/bin/day{day}.rs"), skeleton)
 }

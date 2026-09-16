@@ -25,7 +25,7 @@ bun run task.ts
   const readmePath = path.join(outputDir, 'README.md');
   await Bun.write(readmePath, README_TEMPLATE);
 
-  const TASK_TEMPLATE = `import { parseInput } from '../../lib/parse-input';
+  const TASK_TEMPLATE = `import { toLines } from '../../lib/parse-input';
 
 function part1(input: string[]) {}
 
@@ -35,7 +35,7 @@ async function go(): Promise<void> {
   console.time('task');
 
   console.time('parse-input');
-  const input = await parseInput('./input.txt');
+  const input = await toLines('./input.txt');
   console.timeEnd('parse-input');
 
   console.time('part 1');

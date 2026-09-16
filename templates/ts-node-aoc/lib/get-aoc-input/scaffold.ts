@@ -26,7 +26,7 @@ npx oxnode task.ts
   const readmePath = path.join(outputDir, 'README.md');
   fs.writeFileSync(readmePath, README_TEMPLATE);
 
-  const TASK_TEMPLATE = `import { parseInput } from '../../lib/parse-input';
+  const TASK_TEMPLATE = `import { toLines } from '../../lib/parse-input';
 
 function part1(input: string[]) {}
 
@@ -36,7 +36,7 @@ function go(): void {
   console.time('task');
 
   console.time('parse-input');
-  const input = parseInput('./input.txt');
+  const input = toLines('./input.txt');
   console.timeEnd('parse-input');
 
   console.time('part 1');
