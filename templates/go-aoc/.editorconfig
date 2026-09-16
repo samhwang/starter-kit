@@ -6,9 +6,6 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-# gofmt is the one true Go standard: tabs, no enforced line length.
+# gofmt: tabs only; width is editor display preference.
 [*.go]
 indent_style = tab
-indent_size = 8
-tab_width = 8
-max_line_length = off
