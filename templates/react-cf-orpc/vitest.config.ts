@@ -25,7 +25,7 @@ export default mergeConfig(
             environment: 'node',
             globalSetup: ['./test/global-db-setup.ts'],
             setupFiles: ['./test/per-file-db.ts'],
-          }
+          },
         },
         {
           extends: true,
@@ -36,8 +36,8 @@ export default mergeConfig(
             exclude: ['src/routes/'],
             environment: 'jsdom',
             setupFiles: ['./test/ui-setup.ts'],
-          }
-        }
+          },
+        },
       ],
     },
   })
