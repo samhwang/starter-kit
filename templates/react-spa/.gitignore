@@ -27,5 +27,4 @@ dist-ssr
 coverage
 
 # Generated files
-public/mockServiceWorker.js
 .vitest-preview

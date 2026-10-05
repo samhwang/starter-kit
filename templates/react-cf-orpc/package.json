@@ -6,7 +6,6 @@
   "scripts": {
     "prepare": "pnpm run githooks:init",
     "githooks:init": "husky",
-    "msw:init": "msw init public --save",
     "dev": "vite",
     "build": "pnpm run wrangler:generate && vite build",
     "preview": "vite preview",
@@ -90,10 +89,5 @@
     "node": "^22.0.0",
     "pnpm": "^11.0.0"
   },
-  "packageManager": "pnpm@12.8.1",
-  "msw": {
-    "workerDirectory": [
-      "public"
-    ]
-  }
+  "packageManager": "pnpm@12.8.1"
 }

@@ -10,5 +10,5 @@ export default defineConfig({
   jsxSingleQuote: false,
   arrowParens: 'always',
   sortImports: true,
-  ignorePatterns: ['dist', 'server/generated', 'src/routeTree.gen.ts', 'public/mockServiceWorker.js'],
+  ignorePatterns: ['dist', 'server/generated', 'src/routeTree.gen.ts'],
 });

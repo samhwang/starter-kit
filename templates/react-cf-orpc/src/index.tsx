@@ -5,8 +5,10 @@ import App from './app';
 
 async function renderRoot() {
   if (import.meta.env.DEV) {
-    const { worker } = await import('../__mocks__/msw/browser');
-    await worker.start();
+    const { network } = await import('virtual:msw');
+    const { handlers } = await import('../__mocks__/msw/handlers');
+    network.configure({ handlers });
+    await network.enable();
   }
 
   const RootComponent = (

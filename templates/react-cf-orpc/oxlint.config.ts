@@ -17,7 +17,6 @@ export default defineConfig({
     '.claude',
     'base',
     '.playwright',
-    'public/mockServiceWorker.js',
     'src/routeTree.gen.ts',
     'src/**/__snapshots__',
   ],
