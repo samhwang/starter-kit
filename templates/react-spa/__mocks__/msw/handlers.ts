@@ -1,4 +1,4 @@
-import { http } from 'msw';
+import { http } from 'msw/http';
 
 export const handlers = [
   http.get('/test', ({ request, params, cookies }) => {
