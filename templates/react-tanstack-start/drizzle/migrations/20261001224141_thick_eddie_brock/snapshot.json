@@ -2,9 +2,7 @@
   "version": "8",
   "dialect": "postgres",
   "id": "bdd716c2-8150-4768-a3eb-7a52815c534c",
-  "prevIds": [
-    "00000000-0000-0000-0000-000000000000"
-  ],
+  "prevIds": ["00000000-0000-0000-0000-000000000000"],
   "ddl": [
     {
       "isRlsEnabled": false,
@@ -660,14 +658,10 @@
     },
     {
       "nameExplicit": false,
-      "columns": [
-        "user_id"
-      ],
+      "columns": ["user_id"],
       "schemaTo": "public",
       "tableTo": "user",
-      "columnsTo": [
-        "id"
-      ],
+      "columnsTo": ["id"],
       "onUpdate": "NO ACTION",
       "onDelete": "CASCADE",
       "name": "account_user_id_user_id_fkey",
@@ -677,14 +671,10 @@
     },
     {
       "nameExplicit": false,
-      "columns": [
-        "user_id"
-      ],
+      "columns": ["user_id"],
       "schemaTo": "public",
       "tableTo": "user",
-      "columnsTo": [
-        "id"
-      ],
+      "columnsTo": ["id"],
       "onUpdate": "NO ACTION",
       "onDelete": "CASCADE",
       "name": "session_user_id_user_id_fkey",
@@ -693,9 +683,7 @@
       "table": "session"
     },
     {
-      "columns": [
-        "id"
-      ],
+      "columns": ["id"],
       "nameExplicit": false,
       "name": "account_pkey",
       "schema": "public",
@@ -703,9 +691,7 @@
       "entityType": "pks"
     },
     {
-      "columns": [
-        "id"
-      ],
+      "columns": ["id"],
       "nameExplicit": false,
       "name": "rate_limit_pkey",
       "schema": "public",
@@ -713,9 +699,7 @@
       "entityType": "pks"
     },
     {
-      "columns": [
-        "id"
-      ],
+      "columns": ["id"],
       "nameExplicit": false,
       "name": "session_pkey",
       "schema": "public",
@@ -723,9 +707,7 @@
       "entityType": "pks"
     },
     {
-      "columns": [
-        "id"
-      ],
+      "columns": ["id"],
       "nameExplicit": false,
       "name": "user_pkey",
       "schema": "public",
@@ -733,9 +715,7 @@
       "entityType": "pks"
     },
     {
-      "columns": [
-        "id"
-      ],
+      "columns": ["id"],
       "nameExplicit": false,
       "name": "verification_pkey",
       "schema": "public",
@@ -744,9 +724,7 @@
     },
     {
       "nameExplicit": false,
-      "columns": [
-        "key"
-      ],
+      "columns": ["key"],
       "nullsNotDistinct": false,
       "name": "rate_limit_key_key",
       "schema": "public",
@@ -755,9 +733,7 @@
     },
     {
       "nameExplicit": false,
-      "columns": [
-        "token"
-      ],
+      "columns": ["token"],
       "nullsNotDistinct": false,
       "name": "session_token_key",
       "schema": "public",
@@ -766,9 +742,7 @@
     },
     {
       "nameExplicit": false,
-      "columns": [
-        "email"
-      ],
+      "columns": ["email"],
       "nullsNotDistinct": false,
       "name": "user_email_key",
       "schema": "public",
