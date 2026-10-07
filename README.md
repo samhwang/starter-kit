@@ -9,6 +9,7 @@ You can view them under the [`templates`](./templates) folders.
 | React SPA + CF/oRPC   | [`templates/react-cf-orpc`](./templates/react-cf-orpc)               | Vite React SPA + Cloudflare Workers backend |
 | React SPA             | [`templates/react-spa`](./templates/react-spa)                       | Vite React SPA                              |
 | TS App                | [`templates/ts-app`](./templates/ts-app)                             | TS App, Command lines, server,...           |
+| Hono                  | [`templates/hono`](./templates/hono)                                 | Hono server (Node)                          |
 | TS Lib                | [`templates/ts-lib`](./templates/ts-lib)                             | TS Library for publishing                   |
 | Advent of Code - Node | [`templates/aoc/ts-node`](./templates/aoc/ts-node)                   | Advent of Code with Node                    |
 | Advent of Code - Bun  | [`templates/aoc/ts-bun`](./templates/aoc/ts-bun)                     | Advent of Code with Bun                     |

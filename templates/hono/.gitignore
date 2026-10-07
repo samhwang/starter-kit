@@ -1,0 +1,17 @@
+node_modules
+
+.DS_Store
+*.local
+
+# Test Coverage
+coverage
+
+# Build output
+dist
+
+# env
+.env*
+!.env.sample
+
+# docker volume
+.docker
