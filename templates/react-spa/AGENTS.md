@@ -58,4 +58,4 @@ Think of **rules** as a "manual" that keeps behavior aligned, while **skills** a
 - Additional **skills** (architecture review, test planning, etc.) or **rules** (team code style, compliance requirements) can be added under the existing folders.
 - Keep this file updated so future agents know when to load each artifact and how to combine them safely.
 
-Remember: You're supporting the VAIT community Discord bot. Focus on clean, maintainable code that serves the community well. When in doubt, follow existing patterns in the codebase and refer to the relevant rules.
+Remember: focus on clean, maintainable code. When in doubt, follow existing patterns in the codebase and refer to the relevant rules.
