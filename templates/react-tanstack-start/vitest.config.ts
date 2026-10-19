@@ -10,9 +10,9 @@ export default defineConfig({
         'test/**',
         'src/**/*.test.{ts,tsx}',
         'src/**/generated/**',
-        // Server function wrapeprs
+        // Server function wrappers
         'src/config/server/getSiteName.ts',
-        // Single line library wrapeprs
+        // Single line library wrappers
         'src/auth/client.ts',
         'src/auth/server.ts',
         'src/auth/server/lib.ts',

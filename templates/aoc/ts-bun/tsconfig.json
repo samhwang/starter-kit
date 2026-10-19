@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],
-    "types": ["bun-types"],
+    "types": ["bun"],
     "useDefineForClassFields": true,
     "allowJs": false,
     "skipLibCheck": true,
@@ -16,5 +16,5 @@
     "isolatedModules": false,
     "noEmit": true
   },
-  "include": ["lib", "bin", "tasks", "*.config"]
+  "include": ["lib", "bin", "tasks", "*.config.*ts"]
 }

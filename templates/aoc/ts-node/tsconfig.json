@@ -16,5 +16,5 @@
     "isolatedModules": false,
     "noEmit": true
   },
-  "include": ["lib", "bin", "tasks", "*.config"]
+  "include": ["lib", "bin", "tasks", "*.config.*ts"]
 }

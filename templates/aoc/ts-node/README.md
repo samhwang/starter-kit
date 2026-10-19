@@ -3,7 +3,7 @@
 ## Quick start
 
 ```shell
-npx degit samhwang/starter-kit/templates/ts-node-aoc <your-repo>
+npx degit samhwang/starter-kit/templates/aoc/ts-node <your-repo>
 cd <your-repo>
 pnpm install
 ```

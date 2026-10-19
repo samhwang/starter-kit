@@ -3,7 +3,7 @@
 ## Quick start
 
 ```shell
-npx degit samhwang/starter-kit/templates/rust-aoc <your-repo>
+npx degit samhwang/starter-kit/templates/aoc/rust <your-repo>
 cd <your-repo>
 cargo check
 ```

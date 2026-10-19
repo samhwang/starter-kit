@@ -3,7 +3,7 @@
 ## Quick start
 
 ```shell
-npx degit samhwang/starter-kit/templates/go-aoc <your-repo>
+npx degit samhwang/starter-kit/templates/aoc/go <your-repo>
 cd <your-repo>
 go mod tidy
 ```

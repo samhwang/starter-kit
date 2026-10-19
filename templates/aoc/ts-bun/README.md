@@ -3,7 +3,7 @@
 ## Quick start
 
 ```shell
-npx degit samhwang/starter-kit/templates/ts-bun-aoc <your-repo>
+npx degit samhwang/starter-kit/templates/aoc/ts-bun <your-repo>
 cd <your-repo>
 bun install
 ```
